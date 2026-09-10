@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MANDI-X | Farmer Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#F7F8FA",
+            "primary-container": "#00F098",
+            "on-primary-fixed": "#091E13",
+            "surface-container-lowest": "#FFFFFF",
+            "on-surface": "#0F172A",
+            "on-surface-variant": "#64748B",
+            "primary": "#006D42",
+            "surface-container": "#F1F5F9",
+            "surface-container-high": "#E2E8F0",
+            "outline-variant": "#E2E8F0",
+            "tertiary": "#006D42"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #F7F8FA; color: #0F172A; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24; }
+  </style>
+</head>
+<body class="bg-[#F7F8FA] min-h-screen text-[#0F172A] antialiased flex flex-col md:flex-row">
+<!-- SIDEBAR -->
+<aside class="w-full md:w-64 bg-white border-r border-slate-200 flex-shrink-0 flex flex-col justify-between sticky top-0 md:h-screen z-40">
+<div class="p-5 flex flex-col">
+<!-- LOGO -->
+<div class="flex items-center gap-3 pb-6 border-b border-slate-100">
+<img alt="MANDI-X Logo" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W-QGQw1jrAzUnULp47xKycaYwI482MY3KQcOJoZhBily5Tj_m-wz4kv5x1vHSEftvxoqLnKr4Mq7zEKAarjVinVuTONWll__ujTYpv8DXCMJ4k18gK34zAFizRjJjBgeMffU2eKGhTUEwKYB5XBcP4eNX2gN3Ko-AQRFyxGz90z-sU7CatuEStH1lcpm9W_IBRU_GUrF6jgfGHfbwFCYh8BOlQzZQzk_juGPxaPUPA-FoMVRNZOpNbvVmT"/>
+</div>
+<!-- NAV ITEMS -->
+<nav class="mt-6 flex flex-col gap-1.5 font-medium text-[15px]">
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-[#00F098]/25 text-[#0F172A] font-bold transition-colors" href="#dashboard">
+<span class="text-xl">🏠</span>
+<span>Home</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#products-section">
+<span class="text-xl">📦</span>
+<span>My Products</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#add-product-section">
+<span class="text-xl">➕</span>
+<span>Add Product</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#orders-section">
+<span class="text-xl">🛒</span>
+<span>My Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#earnings-section">
+<span class="text-xl">💰</span>
+<span>My Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#market-prices-section">
+<span class="text-xl">💹</span>
+<span>Market Prices</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#pickup-section">
+<span class="text-xl">🚚</span>
+<span>Pickup</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors" href="#profile-section">
+<span class="text-xl">👤</span>
+<span>My Profile</span>
+</a>
+</nav>
+</div>
+<!-- BOTTOM LINKS -->
+<div class="p-5 border-t border-slate-100 flex flex-col gap-1 text-[14px]">
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors" href="#">
+<span class="text-lg">❓</span>
+<span>Help &amp; Support</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-red-600 hover:bg-red-50 transition-colors" href="#">
+<span class="text-lg">🚪</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- MAIN WRAPPER -->
+<div class="flex-1 flex flex-col min-w-0">
+<!-- TOP HEADER -->
+<header class="bg-white border-b border-slate-200 h-20 px-6 sm:px-8 flex items-center justify-between gap-4 sticky top-0 z-30 shadow-sm">
+<div class="flex items-center gap-2">
+<h1 class="text-xl sm:text-2xl font-extrabold text-[#0F172A] tracking-tight">Farmer Dashboard</h1>
+</div>
+<!-- SEARCH -->
+<div class="flex-1 max-w-md hidden md:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-2.5 text-slate-400 text-xl pointer-events-none">search</span>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00F098] focus:bg-white transition-all" placeholder="Search products or orders..." type="text"/>
+</div>
+</div>
+<!-- RIGHT AVATAR & NOTIFS -->
+<div class="flex items-center gap-4">
+<button class="relative p-2 rounded-xl hover:bg-slate-100 text-slate-600 transition-colors">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-2 right-2 w-2.5 h-2.5 bg-[#00F098] rounded-full ring-2 ring-white"></span>
+</button>
+<div class="h-8 w-px bg-slate-200 hidden sm:block"></div>
+<a class="flex items-center gap-3 group text-left" href="#profile-section">
+<div class="w-10 h-10 rounded-full bg-[#00F098] text-[#091E13] font-bold flex items-center justify-center text-base shadow-sm ring-2 ring-[#00F098]/30">
+            RP
+          </div>
+<div class="hidden sm:flex flex-col">
+<span class="text-sm font-bold text-[#0F172A] leading-tight">Ramesh Patil</span>
+<div class="flex items-center gap-1 text-[11px] text-emerald-700 font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Verified Farmer</span>
+</div>
+</div>
+</a>
+</div>
+</header>
+<!-- CONTENT BODY -->
+<main class="p-6 sm:p-8 space-y-8 max-w-7xl w-full mx-auto" id="dashboard">
+<!-- 1. WELCOME SECTION -->
+<section class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h2 class="text-2xl sm:text-3xl font-extrabold text-[#0F172A] flex items-center gap-2">
+            Namaste, Farmer 👋
+          </h2>
+<p class="text-slate-500 text-base mt-1">Manage your products and orders easily.</p>
+</div>
+<div>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#00F098] text-[#091E13] font-bold text-base hover:bg-[#00d686] transition-transform active:scale-95 shadow-sm" href="#add-product-section">
+<span>➕</span>
+<span>+ Add Product</span>
+</a>
+</div>
+</section>
+<!-- 2. QUICK OVERVIEW (4 Simple Cards) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500">
+<span class="text-sm font-semibold">My Products</span>
+<span class="text-2xl">📦</span>
+</div>
+<div class="mt-4">
+<div class="text-3xl sm:text-4xl font-black text-[#0F172A]">24</div>
+<p class="text-xs text-slate-500 mt-1">Active products listed</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500">
+<span class="text-sm font-semibold">My Orders</span>
+<span class="text-2xl">🛒</span>
+</div>
+<div class="mt-4">
+<div class="text-3xl sm:text-4xl font-black text-[#0F172A]">8</div>
+<p class="text-xs text-slate-500 mt-1">Current active orders</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500">
+<span class="text-sm font-semibold">My Earnings</span>
+<span class="text-2xl">💰</span>
+</div>
+<div class="mt-4">
+<div class="text-3xl sm:text-4xl font-black text-emerald-700">₹24,500</div>
+<p class="text-xs text-slate-500 mt-1">Total earnings</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-slate-500">
+<span class="text-sm font-semibold">Pending Payment</span>
+<span class="text-2xl">⏳</span>
+</div>
+<div class="mt-4">
+<div class="text-3xl sm:text-4xl font-black text-amber-600">₹4,500</div>
+<p class="text-xs text-slate-500 mt-1">Waiting for bank transfer</p>
+</div>
+</div>
+</section>
+<!-- 3. MY PRODUCTS -->
+<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6" id="products-section">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h3 class="text-xl sm:text-2xl font-bold text-[#0F172A]">My Products</h3>
+<p class="text-sm text-slate-500">Your current items listed on the mandi marketplace.</p>
+</div>
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#00F098] text-[#091E13] font-bold text-sm hover:bg-[#00d686] transition-all self-start sm:self-auto" href="#add-product-section">
+<span>➕</span> Add Product
+          </a>
+</div>
+<!-- Product Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="border border-slate-200 rounded-2xl p-5 flex flex-col justify-between bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-all">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-3xl">🍅</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span> Active
+                </span>
+</div>
+<h4 class="text-lg font-bold text-[#0F172A]">Tomato</h4>
+<p class="text-xs text-slate-500 mt-0.5">📍 Kanpur Mandi</p>
+<div class="mt-4 pt-3 border-t border-slate-200/80 space-y-1">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Available:</span>
+<span class="font-bold text-slate-800">100 kg</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Price:</span>
+<span class="font-extrabold text-emerald-700 text-base">₹28 / kg</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-5 pt-3 border-t border-slate-200/80">
+<button class="py-2 text-xs font-bold rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition-colors" type="button">Edit</button>
+<button class="py-2 text-xs font-bold rounded-lg border border-red-200 text-red-600 hover:bg-red-50 transition-colors" type="button">Remove</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="border border-slate-200 rounded-2xl p-5 flex flex-col justify-between bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-all">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-3xl">🌾</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span> Active
+                </span>
+</div>
+<h4 class="text-lg font-bold text-[#0F172A]">Wheat (Grade-A)</h4>
+<p class="text-xs text-slate-500 mt-0.5">📍 Kanpur Mandi</p>
+<div class="mt-4 pt-3 border-t border-slate-200/80 space-y-1">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Available:</span>
+<span class="font-bold text-slate-800">500 kg</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Price:</span>
+<span class="font-extrabold text-emerald-700 text-base">₹32 / kg</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-5 pt-3 border-t border-slate-200/80">
+<button class="py-2 text-xs font-bold rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition-colors" type="button">Edit</button>
+<button class="py-2 text-xs font-bold rounded-lg border border-red-200 text-red-600 hover:bg-red-50 transition-colors" type="button">Remove</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="border border-slate-200 rounded-2xl p-5 flex flex-col justify-between bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-all">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-3xl">🥔</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span> Active
+                </span>
+</div>
+<h4 class="text-lg font-bold text-[#0F172A]">Potato</h4>
+<p class="text-xs text-slate-500 mt-0.5">📍 Kanpur Mandi</p>
+<div class="mt-4 pt-3 border-t border-slate-200/80 space-y-1">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Available:</span>
+<span class="font-bold text-slate-800">250 kg</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Price:</span>
+<span class="font-extrabold text-emerald-700 text-base">₹24 / kg</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-5 pt-3 border-t border-slate-200/80">
+<button class="py-2 text-xs font-bold rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition-colors" type="button">Edit</button>
+<button class="py-2 text-xs font-bold rounded-lg border border-red-200 text-red-600 hover:bg-red-50 transition-colors" type="button">Remove</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="border border-slate-200 rounded-2xl p-5 flex flex-col justify-between bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-all">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-3xl">🌻</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-700">
+<span class="w-2 h-2 rounded-full bg-slate-400"></span> Sold Out
+                </span>
+</div>
+<h4 class="text-lg font-bold text-[#0F172A]">Mustard Seeds</h4>
+<p class="text-xs text-slate-500 mt-0.5">📍 Kanpur Mandi</p>
+<div class="mt-4 pt-3 border-t border-slate-200/80 space-y-1">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Available:</span>
+<span class="font-bold text-slate-500">0 kg</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Price:</span>
+<span class="font-extrabold text-slate-700 text-base">₹55 / kg</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-5 pt-3 border-t border-slate-200/80">
+<button class="py-2 text-xs font-bold rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition-colors" type="button">Edit</button>
+<button class="py-2 text-xs font-bold rounded-lg border border-red-200 text-red-600 hover:bg-red-50 transition-colors" type="button">Remove</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. ADD PRODUCT (Spacious Easy Form) -->
+<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm" id="add-product-section">
+<div class="mb-6">
+<h3 class="text-xl sm:text-2xl font-bold text-[#0F172A] flex items-center gap-2">
+<span>➕</span> Add New Product
+          </h3>
+<p class="text-sm text-slate-500 mt-1">Fill in the simple details below to list your crop directly to mandi buyers.</p>
+</div>
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Field 1 -->
+<div>
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Product Name</label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#00F098]" placeholder="e.g. Fresh Tomato" type="text" value="Fresh Tomato"/>
+</div>
+<!-- Field 2 -->
+<div>
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Category</label>
+<select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#00F098]">
+<option selected="">Vegetables</option>
+<option>Grains</option>
+<option>Fruits</option>
+<option>Oilseeds</option>
+<option>Pulses</option>
+</select>
+</div>
+<!-- Field 3 -->
+<div>
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Quantity Available (in kg)</label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#00F098]" placeholder="e.g. 100" type="number" value="100"/>
+</div>
+<!-- Field 4 -->
+<div>
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Price per kg (₹)</label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#00F098]" placeholder="e.g. 28" type="number" value="28"/>
+</div>
+<!-- Field 5 -->
+<div>
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Minimum Order Quantity (MOQ in kg)</label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#00F098]" placeholder="e.g. 10" type="number" value="10"/>
+</div>
+<!-- Field 6 -->
+<div>
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Farm / Mandi Location</label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#00F098]" placeholder="e.g. Kanpur Mandi Gate #2" type="text" value="Kanpur Mandi Gate #2"/>
+</div>
+<!-- Field 7: Description -->
+<div class="md:col-span-2">
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Short Description</label>
+<textarea class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#00F098]" placeholder="e.g. Freshly harvested, clean, organic" rows="2">Freshly harvested, clean, organic produce ready for pickup.</textarea>
+</div>
+<!-- Field 8: Photo Upload Dropzone -->
+<div class="md:col-span-2">
+<label class="block text-sm font-bold text-slate-700 mb-1.5">Product Photo</label>
+<div class="border-2 border-dashed border-slate-200 hover:border-[#00F098] bg-slate-50 rounded-2xl p-6 text-center cursor-pointer transition-colors flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-slate-400 mb-2">add_photo_alternate</span>
+<span class="text-sm font-semibold text-slate-700">Click to upload crop photo</span>
+<span class="text-xs text-slate-400 mt-1">PNG, JPG up to 5MB</span>
+</div>
+</div>
+</div>
+<!-- Submit CTA -->
+<div class="pt-2">
+<button class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#00F098] text-[#091E13] text-base font-extrabold hover:bg-[#00d686] transition-all shadow-sm" type="submit">
+              Publish Product
+            </button>
+</div>
+</form>
+</section>
+<!-- 5. MY ORDERS -->
+<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6" id="orders-section">
+<div>
+<h3 class="text-xl sm:text-2xl font-bold text-[#0F172A]">My Orders</h3>
+<p class="text-sm text-slate-500">Orders placed by verified mandi buyers.</p>
+</div>
+<div class="space-y-4">
+<!-- Order 1 -->
+<div class="border border-slate-200 rounded-2xl p-5 bg-white hover:border-slate-300 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-2xl flex-shrink-0">
+                🌾
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-mono font-bold text-slate-400">#MX10245</span>
+<span class="text-base font-bold text-[#0F172A]">Wheat (Grade-A)</span>
+</div>
+<div class="flex flex-wrap gap-x-4 gap-y-1 text-xs sm:text-sm text-slate-500 mt-1">
+<span>Buyer: <strong class="text-slate-800">Rajesh Kumar</strong></span>
+<span>Quantity: <strong class="text-slate-800">100 kg</strong></span>
+<span>Total: <strong class="text-emerald-700 font-bold">₹3,200</strong></span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span> Confirmed
+              </span>
+<button class="px-3.5 py-2 text-xs font-bold rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors">View Order</button>
+<button class="px-3.5 py-2 text-xs font-bold rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors">Contact Buyer</button>
+</div>
+</div>
+<!-- Order 2 -->
+<div class="border border-slate-200 rounded-2xl p-5 bg-white hover:border-slate-300 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center text-2xl flex-shrink-0">
+                🍅
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-mono font-bold text-slate-400">#MX10242</span>
+<span class="text-base font-bold text-[#0F172A]">Tomato</span>
+</div>
+<div class="flex flex-wrap gap-x-4 gap-y-1 text-xs sm:text-sm text-slate-500 mt-1">
+<span>Buyer: <strong class="text-slate-800">BigBasket Hub</strong></span>
+<span>Quantity: <strong class="text-slate-800">80 kg</strong></span>
+<span>Total: <strong class="text-emerald-700 font-bold">₹2,240</strong></span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> Pickup Scheduled
+              </span>
+<button class="px-3.5 py-2 text-xs font-bold rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors">View Order</button>
+<button class="px-3.5 py-2 text-xs font-bold rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors">Contact Buyer</button>
+</div>
+</div>
+<!-- Order 3 -->
+<div class="border border-slate-200 rounded-2xl p-5 bg-white hover:border-slate-300 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-yellow-50 border border-yellow-200 flex items-center justify-center text-2xl flex-shrink-0">
+                🥔
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-mono font-bold text-slate-400">#MX10238</span>
+<span class="text-base font-bold text-[#0F172A]">Potato</span>
+</div>
+<div class="flex flex-wrap gap-x-4 gap-y-1 text-xs sm:text-sm text-slate-500 mt-1">
+<span>Buyer: <strong class="text-slate-800">Vikas Wholesale</strong></span>
+<span>Quantity: <strong class="text-slate-800">150 kg</strong></span>
+<span>Total: <strong class="text-emerald-700 font-bold">₹3,600</strong></span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800">
+<span class="w-2 h-2 rounded-full bg-blue-600"></span> Delivered
+              </span>
+<button class="px-3.5 py-2 text-xs font-bold rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors">View Order</button>
+<button class="px-3.5 py-2 text-xs font-bold rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors">Contact Buyer</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. MARKET PRICES (Extremely Simple Daily Mandi Rates) -->
+<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-5" id="market-prices-section">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<h3 class="text-xl sm:text-2xl font-bold text-[#0F172A]">Today's Market Prices</h3>
+<p class="text-sm text-slate-500">Check today's mandi rates before setting your prices.</p>
+</div>
+<!-- Quick filters -->
+<div class="flex flex-wrap items-center gap-1.5">
+<button class="px-3 py-1.5 text-xs font-bold rounded-lg bg-[#00F098] text-[#091E13]">All</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">Wheat</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">Potato</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">Tomato</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">Onion</button>
+</div>
+</div>
+<div class="overflow-hidden border border-slate-200 rounded-xl">
+<div class="divide-y divide-slate-100 bg-white">
+<!-- Row 1 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-2xl">🌾</span>
+<div>
+<span class="text-base font-bold text-[#0F172A]">Wheat</span>
+<p class="text-xs text-slate-500">Kanpur Mandi</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-black text-[#0F172A]">₹32</span>
+<span class="text-xs text-slate-500"> / kg</span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-2xl">🥔</span>
+<div>
+<span class="text-base font-bold text-[#0F172A]">Potato</span>
+<p class="text-xs text-slate-500">Kanpur Mandi</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-black text-[#0F172A]">₹24</span>
+<span class="text-xs text-slate-500"> / kg</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-2xl">🍅</span>
+<div>
+<span class="text-base font-bold text-[#0F172A]">Tomato</span>
+<p class="text-xs text-slate-500">Hamirpur Mandi</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-black text-[#0F172A]">₹28</span>
+<span class="text-xs text-slate-500"> / kg</span>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-2xl">🌻</span>
+<div>
+<span class="text-base font-bold text-[#0F172A]">Mustard</span>
+<p class="text-xs text-slate-500">Alwar Mandi</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-black text-[#0F172A]">₹55</span>
+<span class="text-xs text-slate-500"> / kg</span>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-2xl">🧅</span>
+<div>
+<span class="text-base font-bold text-[#0F172A]">Onion</span>
+<p class="text-xs text-slate-500">Lasalgaon Mandi</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-lg font-black text-[#0F172A]">₹22</span>
+<span class="text-xs text-slate-500"> / kg</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. NEXT PICKUP (Simple 3-Step Flow) -->
+<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm" id="pickup-section">
+<div class="mb-5">
+<h3 class="text-xl sm:text-2xl font-bold text-[#0F172A]">Next Pickup</h3>
+<p class="text-sm text-slate-500">Upcoming vehicle arrival for your crop harvest.</p>
+</div>
+<div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-2xl">🍅</span>
+<span class="text-lg font-bold text-[#0F172A]">Tomato • 80 kg</span>
+</div>
+<p class="text-sm text-slate-600 mt-1">📅 <strong>Pickup Date:</strong> 12 Sept (Tomorrow, 10:00 AM)</p>
+<p class="text-sm text-slate-600">📍 <strong>Pickup Location:</strong> Village Collection Point (Kanpur West)</p>
+</div>
+<div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> Pickup Scheduled
+              </span>
+</div>
+</div>
+<!-- Clean 3-Step Timeline -->
+<div class="pt-4 border-t border-slate-200">
+<div class="relative flex items-center justify-between max-w-xl mx-auto px-4">
+<!-- Line -->
+<div class="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-1 bg-slate-200 z-0"></div>
+<div class="absolute left-8 w-1/2 top-1/2 -translate-y-1/2 h-1 bg-[#00F098] z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center gap-1.5">
+<div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">
+                  ✓
+                </div>
+<span class="text-xs font-bold text-slate-800 text-center">Order Confirmed</span>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center gap-1.5">
+<div class="w-8 h-8 rounded-full bg-[#00F098] text-[#091E13] ring-4 ring-[#00F098]/30 flex items-center justify-center text-xs font-bold">
+                  2
+                </div>
+<span class="text-xs font-extrabold text-slate-900 text-center">Pickup Scheduled</span>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center gap-1.5">
+<div class="w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center text-xs font-bold">
+                  3
+                </div>
+<span class="text-xs font-medium text-slate-400 text-center">Delivered</span>
+</div>
+</div>
+</div>
+<!-- Transporter Call Button -->
+<div class="pt-2 flex justify-end">
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0F172A] text-white text-sm font-bold hover:bg-slate-800 transition-colors shadow-sm" href="tel:+919876543210">
+<span>📞</span> Call Driver (Jaspal Singh)
+            </a>
+</div>
+</div>
+</section>
+<!-- 8. EARNINGS & PAYMENTS (No Complex Charts) -->
+<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6" id="earnings-section">
+<div>
+<h3 class="text-xl sm:text-2xl font-bold text-[#0F172A]">My Earnings</h3>
+<p class="text-sm text-slate-500">Straightforward summary of money earned from crop sales.</p>
+</div>
+<!-- 3 Simple Summary Boxes -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Earnings</span>
+<div class="text-2xl sm:text-3xl font-black text-[#0F172A] mt-2">₹24,500</div>
+</div>
+<div class="p-5 rounded-xl bg-emerald-50/60 border border-emerald-200">
+<span class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Received in Bank</span>
+<div class="text-2xl sm:text-3xl font-black text-emerald-700 mt-2">₹20,000</div>
+</div>
+<div class="p-5 rounded-xl bg-amber-50/60 border border-amber-200">
+<span class="text-xs font-bold text-amber-800 uppercase tracking-wider">Pending Payment</span>
+<div class="text-2xl sm:text-3xl font-black text-amber-700 mt-2">₹4,500</div>
+</div>
+</div>
+<!-- Clean Transaction List -->
+<div class="border border-slate-200 rounded-xl overflow-hidden">
+<div class="bg-slate-50 px-5 py-3 border-b border-slate-200 text-xs font-bold text-slate-600 uppercase tracking-wider">
+            Recent Payments
+          </div>
+<div class="divide-y divide-slate-100 bg-white">
+<div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<span class="text-xs text-slate-400">10 Sept 2026</span>
+<p class="text-sm font-bold text-slate-800">Order #MX10238 (Potato 150 kg)</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-base font-extrabold text-[#0F172A]">₹3,600</span>
+<span class="px-2.5 py-1 text-xs font-bold rounded-full bg-emerald-100 text-emerald-800">Received (Bank)</span>
+</div>
+</div>
+<div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<span class="text-xs text-slate-400">08 Sept 2026</span>
+<p class="text-sm font-bold text-slate-800">Order #MX10230 (Wheat 200 kg)</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-base font-extrabold text-[#0F172A]">₹6,400</span>
+<span class="px-2.5 py-1 text-xs font-bold rounded-full bg-emerald-100 text-emerald-800">Received (Bank)</span>
+</div>
+</div>
+<div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<span class="text-xs text-slate-400">06 Sept 2026</span>
+<p class="text-sm font-bold text-slate-800">Order #MX10224 (Tomato 100 kg)</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-base font-extrabold text-[#0F172A]">₹2,800</span>
+<span class="px-2.5 py-1 text-xs font-bold rounded-full bg-emerald-100 text-emerald-800">Received (Bank)</span>
+</div>
+</div>
+<div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<span class="text-xs text-slate-400">11 Sept 2026</span>
+<p class="text-sm font-bold text-slate-800">Order #MX10242 (Tomato 80 kg)</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-base font-extrabold text-amber-700">₹2,240</span>
+<span class="px-2.5 py-1 text-xs font-bold rounded-full bg-amber-100 text-amber-800">Pending</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. PROFILE SECTION -->
+<section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6" id="profile-section">
+<div>
+<h3 class="text-xl sm:text-2xl font-bold text-[#0F172A]">My Profile</h3>
+<p class="text-sm text-slate-500">Your verified farmer identity and linked bank details.</p>
+</div>
+<div class="border border-slate-200 rounded-2xl p-6 bg-slate-50/50 flex flex-col md:flex-row items-start justify-between gap-6">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+<div class="w-16 h-16 rounded-2xl bg-[#00F098] text-[#091E13] font-black text-2xl flex items-center justify-center shadow-sm">
+              RP
+            </div>
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<h4 class="text-lg font-bold text-[#0F172A]">Ramesh Patil</h4>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+<span class="material-symbols-outlined text-sm">verified</span> Verified Kisan
+                </span>
+</div>
+<p class="text-sm text-slate-600">📱 +91 98765-43210</p>
+<p class="text-sm text-slate-600">📍 Bilhaur Village, Kanpur Nagar, Uttar Pradesh</p>
+<p class="text-xs text-slate-500 pt-1">Aadhaar &amp; Land Record linked and verified.</p>
+</div>
+</div>
+<div class="bg-white border border-slate-200 p-4 rounded-xl w-full md:w-auto min-w-[280px]">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Direct Mandi Bank Account</span>
+<div class="flex items-center gap-2 font-bold text-sm text-[#0F172A]">
+<span>🏦 State Bank of India</span>
+</div>
+<p class="text-xs font-mono text-slate-600 mt-1">A/C ending in *4892</p>
+<span class="inline-block text-[11px] text-emerald-700 font-semibold mt-2">● Direct Mandi Settlement Active</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 font-bold text-sm hover:bg-slate-100 transition-colors" type="button">
+            Edit Profile
+          </button>
+<button class="px-5 py-2.5 rounded-xl bg-slate-100 text-slate-800 font-bold text-sm hover:bg-slate-200 transition-colors" type="button">
+            Update Bank Details
+          </button>
+</div>
+</section>
+</main>
+</div>
+<!-- 10. FLOATING WHATSAPP AI ASSISTANT WIDGET -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+<!-- Popover Menu -->
+<div class="hidden mb-3 w-72 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 text-left transition-all" id="whatsapp-popover">
+<div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+<div class="flex items-center gap-2 font-bold text-sm text-slate-800">
+<span class="w-2.5 h-2.5 rounded-full bg-[#00F098]"></span>
+<span>MANDI-X AI Assistant</span>
+</div>
+<button class="text-slate-400 hover:text-slate-600 p-1" id="whatsapp-close">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<p class="text-xs text-slate-500 mb-2">Tap a quick question:</p>
+<div class="flex flex-col gap-1.5 text-xs font-semibold">
+<button class="text-left px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 transition-colors flex items-center gap-2">
+<span>💹</span> Check Market Price
+        </button>
+<button class="text-left px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 transition-colors flex items-center gap-2">
+<span>📦</span> Check My Order
+        </button>
+<button class="text-left px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 transition-colors flex items-center gap-2">
+<span>🚚</span> Ask About Pickup
+        </button>
+<button class="text-left px-3 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 transition-colors flex items-center gap-2">
+<span>➕</span> Help Me List Product
+        </button>
+</div>
+</div>
+<!-- Floating Trigger Pill -->
+<button class="flex items-center gap-2 px-5 py-3 rounded-full bg-[#0F172A] text-white font-bold text-sm shadow-xl hover:bg-slate-800 active:scale-95 transition-all" id="whatsapp-pill" type="button">
+<span class="text-lg">💬</span>
+<span>WhatsApp AI</span>
+<span class="w-2 h-2 rounded-full bg-[#00F098]"></span>
+</button>
+</div>
+<script>
+    (function() {
+      const pill = document.getElementById('whatsapp-pill');
+      const popover = document.getElementById('whatsapp-popover');
+      const close = document.getElementById('whatsapp-close');
+
+      if (pill && popover) {
+        pill.addEventListener('click', function(e) {
+          e.stopPropagation();
+          popover.classList.toggle('hidden');
+        });
+      }
+      if (close && popover) {
+        close.addEventListener('click', function(e) {
+          e.stopPropagation();
+          popover.classList.add('hidden');
+        });
+      }
+      document.addEventListener('click', function(e) {
+        if (popover && !popover.contains(e.target) && !pill.contains(e.target)) {
+          popover.classList.add('hidden');
+        }
+      });
+    })();
+  </script>
+</body></html>

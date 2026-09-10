@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#dae2fd", "surface-dim": "#d9dadc", "primary-fixed": "#53ffab", "tertiary-fixed-dim": "#3ae193", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "surface-bright": "#f8f9fb", "surface": "#f8f9fb", "surface-container-high": "#e7e8ea", "surface-tint": "#006d42", "tertiary-fixed": "#5ffead", "secondary": "#565e74", "error": "#ba1a1a", "on-tertiary-fixed": "#002111", "surface-container-low": "#f2f4f6", "surface-container-highest": "#e1e2e4", "tertiary": "#006d42", "on-background": "#191c1e", "on-tertiary-fixed-variant": "#005230", "inverse-surface": "#2e3132", "background": "#f8f9fb", "inverse-on-surface": "#f0f1f3", "on-surface": "#191c1e", "surface-variant": "#e1e2e4", "on-primary": "#ffffff", "on-secondary": "#ffffff", "outline-variant": "#b9cbbd", "on-surface-variant": "#3b4a40", "on-primary-fixed": "#002111", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "primary": "#006d42", "on-primary-fixed-variant": "#005231", "secondary-container": "#dae2fd", "surface-container": "#edeef0", "on-tertiary-container": "#00683f", "on-secondary-fixed": "#131b2e", "outline": "#6b7b6f", "on-secondary-fixed-variant": "#3f465c", "primary-fixed-dim": "#00e38f", "inverse-primary": "#00e38f", "secondary-fixed-dim": "#bec6e0", "primary-container": "#00f098", "tertiary-container": "#4bed9e", "on-primary-container": "#00683f", "on-secondary-container": "#5c647a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-2xl": "3rem", "margin-mobile": "1rem", "space-xs": "0.5rem", "space-xl": "2rem", "space-2xs": "0.25rem", "space-3xl": "4rem", "gutter-desktop": "1.5rem", "space-sm": "0.75rem", "margin-desktop": "2rem", "space-lg": "1.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "display-lg-mobile": ["Inter"], "headline-md": ["Inter"], "label-caps": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "title-md": ["Inter"], "metric-headline": ["Inter"], "title-lg": ["Inter"], "display-lg": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"] }, "fontSize": { "display-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.025em", "fontWeight": "900" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "metric-headline": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "title-lg": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "900" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 max-w-[1440px] mx-auto px-margin-mobile lg:px-margin-desktop flex flex-col justify-between pt-space-xs pb-space-2xs"><div class="flex items-center justify-between gap-space-md h-16"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><img alt="MANDI-X agritech marketplace modern geometric wordmark logo, sharp typography, minimalist leaf and exchange 'X' motif in neon mint #00F098 and dark slate #0F172A, transparent background, high tech clean vector. Design context: - Primary color: #00f098
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W-QGQw1jrAzUnULp47xKycaYwI482MY3KQcOJoZhBily5Tj_m-wz4kv5x1vHSEftvxoqLnKr4Mq7zEKAarjVinVuTONWll__ujTYpv8DXCMJ4k18gK34zAFizRjJjBgeMffU2eKGhTUEwKYB5XBcP4eNX2gN3Ko-AQRFyxGz90z-sU7CatuEStH1lcpm9W_IBRU_GUrF6jgfGHfbwFCYh8BOlQzZQzk_juGPxaPUPA-FoMVRNZOpNbvVmT"/><span class="font-label-caps text-label-caps uppercase px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container tracking-wider font-bold">Consumer</span></div><button class="hidden lg:flex items-center gap-space-2xs text-left px-space-xs py-1 rounded-lg hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-primary text-[20px]">location_on</span><div class="flex flex-col leading-none"><span class="font-label-caps text-label-caps text-on-surface-variant">Deliver to</span><span class="font-title-md text-body-sm font-semibold text-on-surface truncate max-w-[140px]">New Delhi 110001</span></div><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></button></div><div class="flex-1 max-w-2xl mx-space-sm"><div class="relative flex items-center w-full h-11 bg-surface-container-low rounded-lg px-space-sm"><button class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant font-medium pr-space-xs" type="button"><span class="hidden sm:inline">All</span><span class="material-symbols-outlined text-[16px]">arrow_drop_down</span></button><div class="h-5 w-[1px] bg-outline-variant/40 mr-space-xs"></div><span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-space-xs">search</span><input class="w-full bg-transparent font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant outline-none border-none" placeholder="Search for vegetables, fruits, grains, pulses, dairy..." type="text"/><button class="p-1 rounded-md text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">mic</span></button></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center gap-space-xs cursor-pointer px-space-xs py-1.5 rounded-lg hover:bg-surface-container transition-colors"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col leading-tight text-left"><span class="font-label-caps text-label-caps text-on-surface-variant">Namaste</span><span class="font-title-md text-body-sm text-on-surface font-bold flex items-center">Rohit <span class="material-symbols-outlined text-[14px]">expand_more</span></span></div></div><a class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center justify-center" data-path="wishlist" href="#"><span class="material-symbols-outlined text-[24px]">favorite</span><span class="absolute top-1 right-1 h-4 w-4 rounded-full bg-error text-on-error font-label-caps text-[10px] flex items-center justify-center font-bold">3</span></a><a class="flex items-center gap-space-xs bg-primary-container text-on-primary-container px-space-sm py-2 rounded-lg hover:bg-tertiary-container transition-colors" data-path="shopping-cart" href="#"><div class="relative flex items-center"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute -top-1.5 -right-2 h-4 w-4 rounded-full bg-inverse-surface text-inverse-on-surface font-label-caps text-[10px] flex items-center justify-center font-bold">2</span></div><div class="hidden sm:flex flex-col text-left leading-none"><span class="font-label-caps text-[10px] uppercase opacity-90">Cart</span><span class="font-title-md text-body-sm font-bold">₹340</span></div></a></div></div><nav class="flex items-center gap-space-xs overflow-x-auto h-10 w-full" data-active-classes="bg-primary text-on-primary font-bold rounded-full"><a aria-current="page" class="whitespace-nowrap px-space-sm py-1 transition-colors bg-primary text-on-primary font-bold rounded-full" data-path="marketplace-home" href="#">All Categories</a><a class="whitespace-nowrap px-space-sm py-1 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="vegetables" href="#">Vegetables 🥬</a><a class="whitespace-nowrap px-space-sm py-1 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="fruits" href="#">Fruits 🍎</a><a class="whitespace-nowrap px-space-sm py-1 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="grains" href="#">Grains 🌾</a><a class="whitespace-nowrap px-space-sm py-1 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pulses" href="#">Pulses 🫘</a><a class="whitespace-nowrap px-space-sm py-1 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="oil-seeds" href="#">Oil Seeds 🌻</a><a class="whitespace-nowrap px-space-sm py-1 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dairy" href="#">Dairy 🥛</a><a class="whitespace-nowrap px-space-sm py-1 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="spices" href="#">Spices 🌶️</a><a class="whitespace-nowrap px-space-sm py-1 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="organic" href="#">Organic 🌿</a><a class="whitespace-nowrap px-space-sm py-1 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="specialty-and-others" href="#">Other Farm Staples</a></nav></div></header><main class="w-full pt-28 bg-background"><div class="flex flex-col w-full font-body-md text-on-surface">
+<!-- TOP RUNNING TICKER -->
+<div class="w-full bg-inverse-surface text-inverse-on-surface py-2 px-margin-mobile lg:px-margin-desktop overflow-hidden">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between gap-space-md text-body-sm">
+<div class="flex items-center gap-space-xs font-semibold whitespace-nowrap">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="text-primary-container font-title-md">MANDI LIVE:</span>
+<span class="text-surface-dim hidden sm:inline">Real-time Kisan APMC Settlement Rates</span>
+</div>
+<div class="flex items-center gap-space-lg overflow-x-auto no-scrollbar whitespace-nowrap text-body-sm font-medium">
+<span class="flex items-center gap-1">🍅 Tomato (Hybrid) <b class="text-primary-container">₹24/kg</b> <span class="text-primary-fixed-dim text-label-caps font-bold">▼ 31%</span></span>
+<span class="flex items-center gap-1">🧅 Nashik Red Onion <b class="text-primary-container">₹26/kg</b> <span class="text-primary-fixed-dim text-label-caps font-bold">▼ 18%</span></span>
+<span class="flex items-center gap-1">🌾 Sharbati Wheat <b class="text-primary-container">₹32/kg</b> <span class="text-primary-fixed-dim text-label-caps font-bold">▼ 23%</span></span>
+<span class="flex items-center gap-1">🥔 Pahadi Potato <b class="text-primary-container">₹20/kg</b> <span class="text-primary-fixed-dim text-label-caps font-bold">▼ 14%</span></span>
+<span class="hidden md:flex items-center gap-1 text-surface-dim">📍 128 Regional Mandis Direct Synced</span>
+</div>
+</div>
+</div>
+<!-- SECTION 1: HERO PROMOTIONAL BANNER -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin-desktop pt-space-lg pb-space-md">
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-inverse-surface via-[#13281e] to-inverse-surface text-surface-container-lowest shadow-md">
+<!-- Decorative radial ambient blur -->
+<div class="absolute -right-16 -bottom-16 w-96 h-96 rounded-full bg-primary/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-10 -top-10 w-72 h-72 rounded-full bg-primary-container/10 blur-2xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center relative z-10 p-space-md sm:p-space-xl lg:p-space-2xl">
+<div class="lg:col-span-7 flex flex-col items-start gap-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-primary-container/20 text-primary-container font-label-caps tracking-wider uppercase">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            Zero Middleman APMC Gateway
+          </div>
+<h1 class="font-display-lg text-headline-lg sm:text-display-lg text-surface-container-lowest tracking-tight leading-none">
+            Fresh From <br class="hidden sm:inline"/>
+<span class="text-primary-container">Indian Farms</span>
+</h1>
+<p class="font-body-lg text-surface-dim max-w-xl">
+            Better Prices. Fresher Products. Direct from verified farmers at zero middlemen markup. Harvested at sunrise, delivered by morning.
+          </p>
+<!-- Key Consumer Value USPs -->
+<div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm text-body-sm font-medium pt-space-2xs text-surface-bright">
+<div class="flex items-center gap-1 bg-surface-container-lowest/10 backdrop-blur px-space-sm py-1.5 rounded-lg">
+<span class="text-primary-container font-bold">⚡</span>
+<span>Farm Harvested in Last 24 Hours</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest/10 backdrop-blur px-space-sm py-1.5 rounded-lg">
+<span class="text-primary-container font-bold">🚚</span>
+<span>Morning Doorstep Delivery</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest/10 backdrop-blur px-space-sm py-1.5 rounded-lg">
+<span class="text-primary-container font-bold">💯</span>
+<span>100% Fair Price to Kisan</span>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs w-full sm:w-auto">
+<a class="w-full sm:w-auto text-center px-space-xl py-3 rounded-xl bg-primary-container text-on-primary-container font-title-md font-bold shadow-md hover:bg-tertiary-container transition-all flex items-center justify-center gap-2" href="#market-grid">
+<span class="material-symbols-outlined text-[20px]">shopping_basket</span>
+              Shop Fresh Produce
+            </a>
+<a class="w-full sm:w-auto text-center px-space-lg py-3 rounded-xl bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 text-surface-container-lowest font-title-md font-semibold transition-colors flex items-center justify-center gap-2" href="#farmer-showcase">
+<span class="material-symbols-outlined text-[20px]">group</span>
+              Explore Farmers
+            </a>
+</div>
+</div>
+<!-- Visual Hero Image Container -->
+<div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+<div class="relative w-full max-w-md h-72 sm:h-80 rounded-2xl overflow-hidden shadow-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Vibrant close-up of sun-drenched Indian farm harvest with lush ripe vine tomatoes, crisp green spinach, fresh yellow onions and golden wheat bushels arranged neatly in rustic bamboo tokris, warm morning farm light, organic produce photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpI3ErvJuSqXGM4BMSq5ZEyTIx5xQg3F2gYfTZY6ValP1wcAOTRbxYmnhcyMDEF9IB9yIl0ZcY-3yoT7nWeYZpQOV3QA7gz2EbFXJXcHALW7n4x1NIzT1uOvttPggqtbxiEtW4dWBF3gmR5DpOmg2tvxwMSHzX4FIuqyEbOfcjXIOXqwDqSmOw4etVWQzXgDVhkTycRspWU7DiIf1O8xJb1Oo14dMCq-pDDj1CzzQ4LLSVo5dEtMguQQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<!-- Trust Badge Overlay -->
+<div class="absolute bottom-3 left-3 right-3 p-space-xs bg-surface-container-lowest/90 backdrop-blur-md rounded-xl flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold">
+<span class="material-symbols-outlined text-[22px]">eco</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-sm font-bold leading-tight">100% Traceable</span>
+<span class="font-body-sm text-label-caps text-on-surface-variant">Batch QR printed on every packet</span>
+</div>
+</div>
+<span class="font-label-caps bg-primary-container/20 text-primary px-2 py-1 rounded font-bold uppercase">APMC Verified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: SHOP BY CATEGORY -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin-desktop py-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Shop by Category</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hand-picked farm essentials harvested daily from regional grower belts</p>
+</div>
+<a class="font-title-md text-body-sm text-primary font-bold hover:underline flex items-center gap-1" href="#market-grid">
+        View All 8 Categories <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Categories Grid (8 Cards) -->
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-space-xs sm:gap-space-sm">
+<!-- Cat 1 -->
+<a class="flex flex-col items-center text-center p-space-sm bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group" href="#market-grid">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 group-hover:bg-primary-container/40 flex items-center justify-center text-[28px] mb-space-2xs transition-colors">
+          🥬
+        </div>
+<span class="font-title-md text-body-sm font-bold text-on-surface">Vegetables</span>
+<span class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">24 items</span>
+</a>
+<!-- Cat 2 -->
+<a class="flex flex-col items-center text-center p-space-sm bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group" href="#market-grid">
+<div class="w-16 h-16 rounded-full bg-error-container/40 group-hover:bg-error-container flex items-center justify-center text-[28px] mb-space-2xs transition-colors">
+          🍎
+        </div>
+<span class="font-title-md text-body-sm font-bold text-on-surface">Fresh Fruits</span>
+<span class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">18 items</span>
+</a>
+<!-- Cat 3 -->
+<a class="flex flex-col items-center text-center p-space-sm bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group" href="#market-grid">
+<div class="w-16 h-16 rounded-full bg-secondary-container/50 group-hover:bg-secondary-container flex items-center justify-center text-[28px] mb-space-2xs transition-colors">
+          🌾
+        </div>
+<span class="font-title-md text-body-sm font-bold text-on-surface">Farm Grains</span>
+<span class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">12 items</span>
+</a>
+<!-- Cat 4 -->
+<a class="flex flex-col items-center text-center p-space-sm bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group" href="#market-grid">
+<div class="w-16 h-16 rounded-full bg-surface-container-high group-hover:bg-surface-dim flex items-center justify-center text-[28px] mb-space-2xs transition-colors">
+          🫘
+        </div>
+<span class="font-title-md text-body-sm font-bold text-on-surface">Pulses &amp; Dal</span>
+<span class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">15 items</span>
+</a>
+<!-- Cat 5 -->
+<a class="flex flex-col items-center text-center p-space-sm bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group" href="#market-grid">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed/50 group-hover:bg-secondary-fixed flex items-center justify-center text-[28px] mb-space-2xs transition-colors">
+          🥛
+        </div>
+<span class="font-title-md text-body-sm font-bold text-on-surface">Pure Dairy</span>
+<span class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">8 items</span>
+</a>
+<!-- Cat 6 -->
+<a class="flex flex-col items-center text-center p-space-sm bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group" href="#market-grid">
+<div class="w-16 h-16 rounded-full bg-error-container/30 group-hover:bg-error-container/60 flex items-center justify-center text-[28px] mb-space-2xs transition-colors">
+          🌶️
+        </div>
+<span class="font-title-md text-body-sm font-bold text-on-surface">Desi Spices</span>
+<span class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">14 items</span>
+</a>
+<!-- Cat 7 -->
+<a class="flex flex-col items-center text-center p-space-sm bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group" href="#market-grid">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 group-hover:bg-primary-container/40 flex items-center justify-center text-[28px] mb-space-2xs transition-colors">
+          🌻
+        </div>
+<span class="font-title-md text-body-sm font-bold text-on-surface">Cold Oils</span>
+<span class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">6 items</span>
+</a>
+<!-- Cat 8 -->
+<a class="flex flex-col items-center text-center p-space-sm bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group" href="#market-grid">
+<div class="w-16 h-16 rounded-full bg-tertiary-container/30 group-hover:bg-tertiary-container flex items-center justify-center text-[28px] mb-space-2xs transition-colors">
+          🌿
+        </div>
+<span class="font-title-md text-body-sm font-bold text-on-surface">Organic</span>
+<span class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">10 items</span>
+</a>
+</div>
+</section>
+<!-- SECTION 3: BEST PRICES TODAY -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin-desktop py-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-2xs mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Best Prices Today</h2>
+<span class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-caps uppercase font-bold text-[10px]">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Direct Farm Gate Discount
+        </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">⏱ Rates refresh daily at 6:00 AM based on APMC auctions</span>
+</div>
+<!-- 4 Rich Product Deal Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Deal Card 1: Fresh Hybrid Tomatoes -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between group">
+<div>
+<div class="relative w-full h-44 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Close up fresh glossy red hybrid tomatoes freshly picked with green calyxes attached, in a traditional Indian wicker basket, natural farm daylight, pristine high resolution product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ZC7zT_L67ipqDmakKDK7XG1MVScEZ9keWVnBaiejbb-oxEjOmK1IMNhd8TShrQi4cbyC1MljSS7bwIALc-uifTNLW0u15MrWDBdUWb8yMj42QoGdNsOa0NhpFWoYKEtys6xrYFJL-DsseNPvO47XPJ1kwmdzk07PF9-bYYSEwf0F0VMEYk7HxznTOZcu4hI4ZVrF7Gp-LmBVbdZM3umamrezbn0SV5MaZmpqQcFMs49GLykQV6G0fg"/>
+<span class="absolute top-2 left-2 px-2 py-1 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">
+              31% OFF
+            </span>
+<button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-error">favorite</span>
+</button>
+<div class="absolute bottom-2 left-2 bg-inverse-surface/80 text-surface-container-lowest px-2 py-0.5 rounded font-label-caps">
+              Harvested 18h ago
+            </div>
+</div>
+<div class="p-space-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[15px] text-primary">location_on</span> Kanpur Mandi
+              </span>
+<span class="flex items-center gap-0.5 text-body-sm font-semibold bg-surface-container px-1.5 py-0.5 rounded text-on-surface">
+                ★ 4.8 <span class="font-label-caps text-on-surface-variant">(340)</span>
+</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface leading-snug">Fresh Hybrid Tomatoes</h3>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-primary font-medium">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Farmer: Sardar Ramesh</span>
+</div>
+<div class="flex items-baseline gap-2 mt-space-2xs">
+<span class="font-headline-sm text-headline-sm font-black text-on-surface">₹24</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹35/kg</span>
+<span class="font-label-caps font-bold text-primary">Save ₹11</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm pt-0 flex items-center gap-2">
+<!-- Quantity picker -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-1 font-body-sm font-bold text-on-surface">
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container shadow-xs" type="button">−</button>
+<span class="px-2">1 kg</span>
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container shadow-xs" type="button">+</button>
+</div>
+<button class="flex-1 h-9 rounded-lg bg-primary-container hover:bg-tertiary-container text-on-primary-container font-title-md font-bold text-body-sm transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span> Add
+          </button>
+</div>
+</div>
+<!-- Deal Card 2: Nashik Red Onions -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between group">
+<div>
+<div class="relative w-full h-44 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Piles of crisp fresh Nashik red onions with dry papery skin, arranged neatly under bright sunlit agricultural produce setting, high quality fresh market display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFRwff-ZHg02BESC0URG2LvPplXhxMOtyL5BUrgKai0NVENjH5Z_CbpAA50-5qRYJBmv0qGT47uDeB-nazm2O36p4Cnd0pa0rpgbFDsb3PdT-7hXIE6WLjDh8bqe9iATaJlnbYU4sqo0_B-wnu5siNxKgAByct8XRozbfUHf0e5qfpaHi-box7tT34tdSSjeEvkicvjU3FwZmF4jgUq7KCXZlLmIO3byAtswOBtrSlrTVqaFOE7LcAkw"/>
+<span class="absolute top-2 left-2 px-2 py-1 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">
+              31% OFF
+            </span>
+<button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-2 bg-inverse-surface/80 text-surface-container-lowest px-2 py-0.5 rounded font-label-caps">
+              Harvested 22h ago
+            </div>
+</div>
+<div class="p-space-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[15px] text-primary">location_on</span> Lasalgaon APMC
+              </span>
+<span class="flex items-center gap-0.5 text-body-sm font-semibold bg-surface-container px-1.5 py-0.5 rounded text-on-surface">
+                ★ 4.7 <span class="font-label-caps text-on-surface-variant">(210)</span>
+</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface leading-snug">Nashik Red Onions</h3>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-primary font-medium">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Farmer: Kailash M.</span>
+</div>
+<div class="flex items-baseline gap-2 mt-space-2xs">
+<span class="font-headline-sm text-headline-sm font-black text-on-surface">₹26</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹38/kg</span>
+<span class="font-label-caps font-bold text-primary">Save ₹12</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm pt-0 flex items-center gap-2">
+<div class="flex items-center bg-surface-container-low rounded-lg p-1 font-body-sm font-bold text-on-surface">
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container shadow-xs" type="button">−</button>
+<span class="px-2">1 kg</span>
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container shadow-xs" type="button">+</button>
+</div>
+<button class="flex-1 h-9 rounded-lg bg-primary-container hover:bg-tertiary-container text-on-primary-container font-title-md font-bold text-body-sm transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span> Add
+          </button>
+</div>
+</div>
+<!-- Deal Card 3: Sharbati Whole Wheat -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between group">
+<div>
+<div class="relative w-full h-44 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Golden Sharbati raw wheat grains pouring from a jute sack into a clean ceramic bowl, farm harvest aesthetic, crisp clarity, warm earth lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2VrC2OjfdpRKc-jGHwyJPiUjTMjnHaCBSQzNi3UElo4A0nqa0SSZp3kJpcaATmOp_Lt72Kv_E7zoGW8zhekV31gYRKtzw3JXoZ3XgehH7ZHdH4nUt1TQMWcKD-MmJ9ZziLIChpf-RpqrlGwqoCQjy9vQat6LU1QDLU61L6triNOBvZPWZZ9tEoqbDiZ9qi6xvz48YF2LWToED834w61yKLY2WjY7wKkPSGRZr4BUKj5OJOLzef-YBgA"/>
+<span class="absolute top-2 left-2 px-2 py-1 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">
+              23% OFF
+            </span>
+<button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-2 bg-inverse-surface/80 text-surface-container-lowest px-2 py-0.5 rounded font-label-caps">
+              Single Origin
+            </div>
+</div>
+<div class="p-space-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[15px] text-primary">location_on</span> Khanna Mandi
+              </span>
+<span class="flex items-center gap-0.5 text-body-sm font-semibold bg-surface-container px-1.5 py-0.5 rounded text-on-surface">
+                ★ 4.9 <span class="font-label-caps text-on-surface-variant">(512)</span>
+</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface leading-snug">Sharbati Whole Wheat</h3>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-primary font-medium">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Farmer: Gurpreet Singh</span>
+</div>
+<div class="flex items-baseline gap-2 mt-space-2xs">
+<span class="font-headline-sm text-headline-sm font-black text-on-surface">₹32</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹42/kg</span>
+<span class="font-label-caps font-bold text-primary">Save ₹10</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm pt-0 flex items-center gap-2">
+<div class="flex items-center bg-surface-container-low rounded-lg p-1 font-body-sm font-bold text-on-surface">
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container shadow-xs" type="button">−</button>
+<span class="px-2">5 kg</span>
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container shadow-xs" type="button">+</button>
+</div>
+<button class="flex-1 h-9 rounded-lg bg-primary-container hover:bg-tertiary-container text-on-primary-container font-title-md font-bold text-body-sm transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span> Add
+          </button>
+</div>
+</div>
+<!-- Deal Card 4: Pahadi Fresh Potatoes -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between group">
+<div>
+<div class="relative w-full h-44 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Mountain fresh unwashed Pahadi potatoes dusted with fine hill soil on clean wooden crates, crisp natural lighting, authentic Indian farm produce photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKQOYh-a_Foa8LoraWYK8zXv71CmnNyv8GsN3bjomaIfgaDx-IJRi2zMpfG_yF8srdTjSFzDv1_KduBSWDMcwjFDj-fbrpJUfOgunL1_U4Sr91UWLUqaNX3_purc_YWLWsbSCorrXDkzdRFpBbL1668V90WCxtie_nNGgb36DnzunzNiLTI_6y0qwjrGNI-q7CmTszIsFGypOe5QaunlqCxi8Yl5mrJepV_SCaArTGTpyysTQG6lF9-g"/>
+<span class="absolute top-2 left-2 px-2 py-1 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">
+              28% OFF
+            </span>
+<button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-2 bg-inverse-surface/80 text-surface-container-lowest px-2 py-0.5 rounded font-label-caps">
+              Himalayan Crop
+            </div>
+</div>
+<div class="p-space-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[15px] text-primary">location_on</span> Shimla Farm Gate
+              </span>
+<span class="flex items-center gap-0.5 text-body-sm font-semibold bg-surface-container px-1.5 py-0.5 rounded text-on-surface">
+                ★ 4.6 <span class="font-label-caps text-on-surface-variant">(180)</span>
+</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface leading-snug">Pahadi Fresh Potatoes</h3>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-primary font-medium">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Farmer: Vikram Rana</span>
+</div>
+<div class="flex items-baseline gap-2 mt-space-2xs">
+<span class="font-headline-sm text-headline-sm font-black text-on-surface">₹20</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹28/kg</span>
+<span class="font-label-caps font-bold text-primary">Save ₹8</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm pt-0 flex items-center gap-2">
+<div class="flex items-center bg-surface-container-low rounded-lg p-1 font-body-sm font-bold text-on-surface">
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container shadow-xs" type="button">−</button>
+<span class="px-2">2 kg</span>
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container shadow-xs" type="button">+</button>
+</div>
+<button class="flex-1 h-9 rounded-lg bg-primary-container hover:bg-tertiary-container text-on-primary-container font-title-md font-bold text-body-sm transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span> Add
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: EXPLORE FRESH PRODUCTS (Filters + 4-Column Shopping Grid) -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin-desktop py-space-lg" id="market-grid">
+<!-- Section Title & Filter Controls -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Explore Fresh Products</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Daily wholesale rates brought directly to home kitchens</p>
+</div>
+<!-- Sorting Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1">
+<span class="font-label-caps uppercase text-on-surface-variant text-[11px] font-bold mr-1">Sort:</span>
+<button class="px-space-sm py-1 rounded-full bg-inverse-surface text-primary-container font-title-md text-body-sm font-bold whitespace-nowrap" type="button">Popular</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-title-md text-body-sm font-medium whitespace-nowrap shadow-xs" type="button">Price: Low to High</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-title-md text-body-sm font-medium whitespace-nowrap shadow-xs" type="button">Price: High to Low</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-title-md text-body-sm font-medium whitespace-nowrap shadow-xs" type="button">Newest Harvest</button>
+</div>
+</div>
+<!-- Quick Filter Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar pb-1">
+<button class="px-space-sm py-1 rounded-full bg-primary text-on-primary font-body-sm font-bold whitespace-nowrap" type="button">All Items (120)</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-body-sm font-medium shadow-xs whitespace-nowrap" type="button">🥬 Vegetables</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-body-sm font-medium shadow-xs whitespace-nowrap" type="button">🍎 Fruits</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-body-sm font-medium shadow-xs whitespace-nowrap" type="button">🌾 Grains &amp; Flours</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-body-sm font-medium shadow-xs whitespace-nowrap" type="button">🌿 Certified Organic</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-body-sm font-medium shadow-xs whitespace-nowrap" type="button">💰 Under ₹50/kg</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-body-sm font-medium shadow-xs whitespace-nowrap" type="button">★ 4★ &amp; above</button>
+</div>
+</div>
+<!-- 8 Main Detailed Product Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-space-md">
+<!-- Item 1: Desi Cauliflower -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow p-space-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-40 bg-surface-container-low rounded-xl overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-alt="Single fresh organic cauliflower head with crisp green leaves wrapped around clean white florets on wooden table, bright farm light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWF_4akWG_8on40RG6K2RSFYta-XwmMlCxwcCqz7QU1C86w_5Gue88_rbeqHXRQovsv_b61W_0BtiOHIOXW8Vjo5C_5nCHDPi860zrOwpI_rKL6YhlkoPrgB7_ip4aoPouvmtM2OXjQ3TKugT3PXSZdWMJmvRl2daQF9_A2Fp2plGshN_DtIqtbLw5Ep46Fz3-x0VRZDO9YMygZ8lOGLnXF0NDkyZEkaf1rMU60g1D0s2SvCZcM-AgTw"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">20% OFF</span>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant mb-1">
+<span class="flex items-center gap-1 font-medium truncate">
+<span class="material-symbols-outlined text-primary text-[14px]">location_on</span> Meerut Farm
+            </span>
+<span class="font-bold text-on-surface flex items-center">★ 4.8</span>
+</div>
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Desi Cauliflower (Gobi)</h4>
+<span class="font-body-sm text-label-caps text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Verified Farmer Direct
+          </span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹30</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹38</span>
+<span class="font-body-sm text-on-surface-variant">/ piece</span>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span> Add to Cart
+        </button>
+</div>
+<!-- Item 2: Organic Green Spinach -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow p-space-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-40 bg-surface-container-low rounded-xl overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-alt="Fresh vibrant green tender spinach leaves tied with jute twine, crisp dew drops on emerald leaves, close-up clean farm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk1fnvcp4hPFr71yiMMqcDx6pBSlzQ_ADxN-gwDsg-zgF6Mmj3hqsaJ1xGs9M28CmTOVStkukkbajUa1iITXsvLsw0FPeGs6f9XZYU4l9bEPLi17UkKFvMU4E0TCubOlG6mnpBNL3ubpeS_OHNJjPcK4S3Sds99nHnJKm4l5gF-SpFReyU4jR-TxBdPeGDKyxxqo88Sx4vbKst0Tw_pYCZGdm2P3ETeQ3_FsiKjbsvbfPkfkklfTe5gQ"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">25% OFF</span>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant mb-1">
+<span class="flex items-center gap-1 font-medium truncate">
+<span class="material-symbols-outlined text-primary text-[14px]">location_on</span> Sonipat Cluster
+            </span>
+<span class="font-bold text-on-surface flex items-center">★ 4.9</span>
+</div>
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Organic Spinach (Palak)</h4>
+<span class="font-body-sm text-label-caps text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Verified Farmer Direct
+          </span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹18</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹24</span>
+<span class="font-body-sm text-on-surface-variant">/ bunch</span>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span> Add to Cart
+        </button>
+</div>
+<!-- Item 3: Alphonso Farm Mangoes -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow p-space-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-40 bg-surface-container-low rounded-xl overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-alt="Sun-ripened golden Ratnagiri Alphonso mangoes with rich aroma, resting in traditional hay packing crate, vibrant and authentic Indian fruit stall setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA9p7FoKIHslFV3vQ9Piu4HNTrnjXTizSnFjNsBewmhFx5z_O7VmhWA3XNqQXy-fpo_tTSR26ibi_IOl1JianMeGeUU0KMc2CU3MgP3miPFFtAtCPDfy8e7V6okw0vjiR_IzxpNp__lq_N9hhgwOdHS8GXk52bmi5MQ7MEdnhKY1vHD_R88PRz6eiU-TeKycyxyDjLw5FCp4EGG8_5IPQOYTKHKllM87eTV7osqzGZrVPaeVB426qnag"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">18% OFF</span>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant mb-1">
+<span class="flex items-center gap-1 font-medium truncate">
+<span class="material-symbols-outlined text-primary text-[14px]">location_on</span> Ratnagiri Direct
+            </span>
+<span class="font-bold text-on-surface flex items-center">★ 5.0</span>
+</div>
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Alphonso Mangoes (Hapus)</h4>
+<span class="font-body-sm text-label-caps text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> GI-Tagged Orchard
+          </span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹180</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹220</span>
+<span class="font-body-sm text-on-surface-variant">/ kg</span>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span> Add to Cart
+        </button>
+</div>
+<!-- Item 4: Basmati 1121 Rice -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow p-space-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-40 bg-surface-container-low rounded-xl overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-alt="Extra long grain uncooked 1121 aged aromatic Basmati rice grains on polished black slate spoon, delicate detail and texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXJ2MTIhVrlF4gifPnK7Ns_AegurOX-nVsYFvr96PchyZ0pALAws-h5QLNEm66EzNHL50I2GKQILQ-VHSNSsMGI3E7YkGcWbjxIstBF5ivZDOhrCWbX-YmvEsKNgpqo3d93X0q7Sol6jF788IPUnPH_aC0Hhg5SuES64UM0FrbVEURuZ649aS1xJrzXXnfwg9Co8Duof3K1Qs3iQdxDDvN10XLTi4IpuKjVY9_nFrMvURKlFKSKdL8Rw"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">15% OFF</span>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant mb-1">
+<span class="flex items-center gap-1 font-medium truncate">
+<span class="material-symbols-outlined text-primary text-[14px]">location_on</span> Karnal Mandi
+            </span>
+<span class="font-bold text-on-surface flex items-center">★ 4.9</span>
+</div>
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Basmati 1121 Rice</h4>
+<span class="font-body-sm text-label-caps text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Aged 2 Years
+          </span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹85</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹100</span>
+<span class="font-body-sm text-on-surface-variant">/ kg</span>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span> Add to Cart
+        </button>
+</div>
+<!-- Item 5: Toor Dal -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow p-space-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-40 bg-surface-container-low rounded-xl overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-alt="Raw yellow unpolished Toor Dal pigeon peas in a handmade clay vessel, bright natural kitchen table setting, clean authentic Indian dal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwZZ-64LA_udKeWUcU6oM9I9KZghfq3EcPAJsGhVARR0fR0PY80zwmBXeRD-gI3TZkuejp5MIytFXcNrdP0f1dpzc9ni7VuMivV7KAhZIyxeVBxQOSN8iQioKiZifTnnQKraK1K428-0nCsSWJG0K7t8o8uA3YXyRP2BAbCnScH2vlNkIn9FEjB-6k4UvrwltQfd_3R6IlIzCclrXwfCX1r83DxgGa-6v0I6-24GqV6BDLvyaPNaZ4dw"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">12% OFF</span>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant mb-1">
+<span class="flex items-center gap-1 font-medium truncate">
+<span class="material-symbols-outlined text-primary text-[14px]">location_on</span> Gulbarga Cluster
+            </span>
+<span class="font-bold text-on-surface flex items-center">★ 4.8</span>
+</div>
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Toor Dal (Desi Unpolished)</h4>
+<span class="font-body-sm text-label-caps text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Zero Chemical Polish
+          </span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹140</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹160</span>
+<span class="font-body-sm text-on-surface-variant">/ kg</span>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span> Add to Cart
+        </button>
+</div>
+<!-- Item 6: Desi Cow Bilona Ghee -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow p-space-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-40 bg-surface-container-low rounded-xl overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-alt="Traditional glass jar filled with granular golden A2 cow ghee with wooden ladle dripping pure desi clarified butter, warm golden lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs8C9hloSqxiM8Ex1sfTBkmuay-DyS1pkY_X6sL6cZac_1CSPhhhpPnn11bO_V4h5AWlXDs7RpoluivpJPLDRY2GeRIcvmY6SfmwG9MKaYRSZFcdotx8hdJPbl-5y4S7KPFs7cTy3FbvgMbr3iuq9z5fepUWIgMNTAAfSS_5uw3WjsYt0g6Ytk3r3DYY1TAx0uLdSFt5LXwSp5XVUqVkNRBX27TF9agR-mmZ_vtJTQyLFpB_UhqD7Z9w"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">10% OFF</span>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant mb-1">
+<span class="flex items-center gap-1 font-medium truncate">
+<span class="material-symbols-outlined text-primary text-[14px]">location_on</span> Haryana Gaushala
+            </span>
+<span class="font-bold text-on-surface flex items-center">★ 5.0</span>
+</div>
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Desi Cow Bilona Ghee</h4>
+<span class="font-body-sm text-label-caps text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Hand-Churned A2
+          </span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹650</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹720</span>
+<span class="font-body-sm text-on-surface-variant">/ 500ml</span>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span> Add to Cart
+        </button>
+</div>
+<!-- Item 7: Pure Cold-Pressed Mustard Oil -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow p-space-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-40 bg-surface-container-low rounded-xl overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-alt="Glass bottle of pure pungent yellow cold-pressed kachi ghani mustard oil next to yellow mustard seeds in rustic wooden spoon, clean crisp shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbi2vz5fbIr-WKcaPSGvGppxo23yIQJ0ZUfjblg0XnLH7lq5crlRcuv-14JX0-Ljc-885zE0a3fSFBcUAgGfr0x7IgThd5JYTjKpNMnYomKXOWKBIe2TI0WCVEbcWjY7RhMN1gOlyfUf4ZL1jKs1Fb9eVe3UVaPimuq8ycEr49vIbk-pIA1WIzkbI4K9eAsF7Gbm1BW3mNKsu7kOt6EivJFq1De63frHYFEEWWLL9vBak95vnqgu56ZA"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">14% OFF</span>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant mb-1">
+<span class="flex items-center gap-1 font-medium truncate">
+<span class="material-symbols-outlined text-primary text-[14px]">location_on</span> Alwar Mandi
+            </span>
+<span class="font-bold text-on-surface flex items-center">★ 4.8</span>
+</div>
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Cold-Pressed Mustard Oil</h4>
+<span class="font-body-sm text-label-caps text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Kachi Ghani Pure
+          </span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹145</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹170</span>
+<span class="font-body-sm text-on-surface-variant">/ 1L</span>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span> Add to Cart
+        </button>
+</div>
+<!-- Item 8: Green Shimla Capsicum -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-shadow p-space-sm flex flex-col justify-between">
+<div>
+<div class="relative w-full h-40 bg-surface-container-low rounded-xl overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-alt="Fresh shiny green bell peppers capsicum on a clean white kitchen surface with fresh water droplets, crisp natural lighting, close-up fresh vegetable shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaF8Qd7WrVUsTmypumtJ3ul2dOHqbkJnRK2cgOe3USJalVqzBXxQ8UbOw1qvyaEXU7EokKszGK9brk92Ys7E6lhQXuKUr3rKt5c2KzUTHzR8VsZeA0xDoFpVwK1kBI6H04xe13mYK4J9bEDcsTiQygykA-KAbSvaW1Yq8ImYvFa-4COkaa8SrS2zrYdQc05NyHxTdfhwDdm3DWK3Ujz-zYQsOmjQ4ypMJrFNFBOA_qUPKtr3cjHF3JpA"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps uppercase font-bold">22% OFF</span>
+<button class="absolute top-2 right-2 p-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant mb-1">
+<span class="flex items-center gap-1 font-medium truncate">
+<span class="material-symbols-outlined text-primary text-[14px]">location_on</span> Solan Mandi
+            </span>
+<span class="font-bold text-on-surface flex items-center">★ 4.7</span>
+</div>
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Green Shimla Capsicum</h4>
+<span class="font-body-sm text-label-caps text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Crisp Farm Pick
+          </span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹35</span>
+<span class="font-body-sm text-on-surface-variant line-through">₹45</span>
+<span class="font-body-sm text-on-surface-variant">/ 500g</span>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 rounded-lg bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span> Add to Cart
+        </button>
+</div>
+</div>
+</section>
+<!-- SECTION 5: DIRECT FROM FARMERS -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin-desktop py-space-lg" id="farmer-showcase">
+<div class="bg-surface-container-lowest rounded-2xl p-space-md sm:p-space-xl shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-2xs mb-space-lg">
+<div>
+<div class="inline-flex items-center gap-1 text-primary font-label-caps uppercase font-bold tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">handshake</span> Direct APMC Farmer Partner Network
+          </div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Direct From Verified Farmers</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Know who grows your food. 100% of payment goes directly to farmer bank accounts via escrow settlement.</p>
+</div>
+<a class="font-title-md text-body-sm text-primary font-bold hover:underline flex items-center gap-1" href="#market-grid">
+          View All 1,420 Kisans <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- 3 Featured Farmer Profile Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Farmer 1 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-container-highest shrink-0 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Portrait of a proud Indian Sikh farmer Sardar Gurpreet Singh wearing traditional saffron turban smiling warmly in lush green wheat farm Punjab golden hour lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUZyf2OVGK3OI5BqOnkDT2LkGqlvK1NOPtDHSNsnW3dw_-fHrCIUl-YC_HQiTZ40hShHpIidqUTNjMIS2rwnLvQ_DXxvxMEKL4-py5nSzSkHrIA1Rr26Oo0mOyLz7OTmbbxAae-x_8_zP5LSC388CkqpeQIlF7xxlq0NPfRsy2-VGkizpKynvHq-uYinT5Y4m4Ubs5SmTUIf0EWaod1EDgWkzvVCzkNdhlAS9L1X-6haaWn_Tdo17USQ"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Gurpreet Singh</h3>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Khanna, Punjab</span>
+<span class="font-label-caps text-[11px] font-bold text-primary flex items-center gap-0.5 mt-0.5">
+                  ★ 4.9 (420 orders fulfilled)
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-xs text-body-sm mb-space-sm">
+<span class="font-label-caps uppercase text-on-surface-variant text-[10px] block font-bold">Specialization</span>
+<span class="font-medium text-on-surface">Sharbati Wheat &amp; 1121 Basmati</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mb-space-sm">
+              "Harvesting pesticide-free crops for 15+ years. MANDI-X pays us direct same-day settlement without commission cut."
+            </p>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container-lowest hover:bg-inverse-surface hover:text-surface-container-lowest text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1 shadow-xs" type="button">
+            View All 6 Crops <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Farmer 2 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-container-highest shrink-0 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Portrait of progressive Rajasthani farmer Kailash Meena wearing traditional headgear in front of a modern green polyhouse hydroponic greenhouse, daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbdR05pze25Xj0dox9kotQ7R6zCdujtVw__EBiI-N381x3NLDKZ5Pn4ShaYlbUiwmH67QznQuGgtciqPlQP3zwVtdrx_3_IOgHtYBODbLKCHdlWka_aUUwFAqtXgYzNuP163rvIll9-b77LRodxACzMBSHjJmsrmjCcHkD25-tAYuNbGrRcwfNN792XN9a6ws8KInpDmbU8GU4Kpkj68-9MROIGJI0ElKyKLHjFGktro_psBrxurwqDw"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Kailash Meena</h3>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Azadpur / Jaipur, RJ</span>
+<span class="font-label-caps text-[11px] font-bold text-primary flex items-center gap-0.5 mt-0.5">
+                  ★ 4.8 (310 orders fulfilled)
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-xs text-body-sm mb-space-sm">
+<span class="font-label-caps uppercase text-on-surface-variant text-[10px] block font-bold">Specialization</span>
+<span class="font-medium text-on-surface">Fresh Hybrid Tomatoes &amp; Cucumbers</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mb-space-sm">
+              "Hydroponic &amp; greenhouse harvest. Picked at 4 AM every morning and packed in ventilated crates for Delhi NCR."
+            </p>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container-lowest hover:bg-inverse-surface hover:text-surface-container-lowest text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1 shadow-xs" type="button">
+            View All 4 Crops <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Farmer 3 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-container-highest shrink-0 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Portrait of seasoned Marathi farmer Ramesh Patil standing proudly amidst red onion farm rows in Lasalgaon Maharashtra, bright sunny morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaCbUkHlecpmcN803KGbe_6HGVqQxJu-HIh28OE4z7t6dM7ZCCeYGbjS4doHSwjIUOIGTSHazesLQHSiOJ9IaCy-lP64pBLTmD7t03oGeIgLITL8OXFq9xOY7szaZl9QxKTOVcCIjsY72iS0_II4VzLyXq9jDX1cj4wlnsOTvRdv-pSwvlU609Qo9DbMKK5rhbXa3X7GSzxQddn4XPqeaXy1qLLG2kKnS44Q_22P7-0R4xXLTartbhAQ"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Ramesh Patil</h3>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lasalgaon, Maharashtra</span>
+<span class="font-label-caps text-[11px] font-bold text-primary flex items-center gap-0.5 mt-0.5">
+                  ★ 4.9 (580 orders fulfilled)
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-xs text-body-sm mb-space-sm">
+<span class="font-label-caps uppercase text-on-surface-variant text-[10px] block font-bold">Specialization</span>
+<span class="font-medium text-on-surface">Grade-A Export Red Onions &amp; Garlic</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mb-space-sm">
+              "Direct onion grower cluster head. Guaranteed zero cold-storage rot. Graded manually for optimal kitchen shelf-life."
+            </p>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container-lowest hover:bg-inverse-surface hover:text-surface-container-lowest text-on-surface font-title-md text-body-sm font-bold transition-colors flex items-center justify-center gap-1 shadow-xs" type="button">
+            View All 3 Crops <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: SHOPPING CART SLIP / QUICK CART PREVIEW -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin-desktop py-space-md">
+<div class="bg-surface-container-lowest rounded-2xl p-space-md sm:p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface">Your Active Cart</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 items from 2 verified farm gates</span>
+</div>
+</div>
+<span class="font-label-caps px-2.5 py-1 rounded-full bg-primary-container/20 text-primary font-bold uppercase">
+          ⚡ Morning Slot Reserved
+        </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg pt-space-xs">
+<!-- Left: Cart Items List -->
+<div class="lg:col-span-7 flex flex-col gap-space-sm">
+<!-- Cart Item 1 -->
+<div class="flex items-center justify-between gap-space-sm p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-14 h-14 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Fresh vine ripe tomatoes thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcYpGkI2bdloj8yXQqycOkwCxB4YMt_4W0PGDA9dKFm_WgbLVA7ykrFQbgRvxw6z-vgzUqnxxoUeUP2BvqInuCbISjk4cLy0_IMWtjkp8fUp5NOw3_pYpDE9uk76VuXzIs_s3XPceef_N8cSFdXNuW1X0KcRvwYBmPz4JrM8CdOPX8HCzco7Ijn1Qvv0NaaAlaXjM8cXe0oZlGSIeKf4X1lXUgAzFZQGlK8Q6L2VH4yumNSl-vCz7bdA"/>
+</div>
+<div class="flex flex-col truncate">
+<h4 class="font-title-md text-body-sm font-bold text-on-surface truncate">Fresh Hybrid Tomatoes</h4>
+<span class="font-body-sm text-label-caps text-on-surface-variant">Farmer: Sardar Ramesh (Kanpur)</span>
+<span class="font-title-md text-body-sm font-bold text-on-surface mt-0.5">₹24/kg × 2 = ₹48</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center bg-surface-container-lowest rounded-lg p-1 font-body-sm font-bold text-on-surface shadow-xs">
+<button class="w-6 h-6 rounded flex items-center justify-center hover:bg-surface-container" type="button">−</button>
+<span class="px-2 text-body-sm">2 kg</span>
+<button class="w-6 h-6 rounded flex items-center justify-center hover:bg-surface-container" type="button">+</button>
+</div>
+<button aria-label="Remove item" class="p-1.5 text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex items-center justify-between gap-space-sm p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-14 h-14 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Golden Sharbati wheat grains sack thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFHHCg_nnYQ0NhavTm4082PNqpDEVsP0UYOybWnR8-csYPtBRRVzHm6a-LVzi1Ee545etNM8nJLuMY9QrMcJ_2_lOLGYEY5D54tmsCxszyHtgDdlDsI_NOG70dh84GxAR2foqf7uGQMUukvT4ggNfWsdWm9vU8piQ4_iC4mrDM-aEJNei7Rhrvx5kHanriQip1lOeaGq_sxoFzq0SH1sRYbBedMFdcuDiR79y8N4iIW5DbEADJOeKXKQ"/>
+</div>
+<div class="flex flex-col truncate">
+<h4 class="font-title-md text-body-sm font-bold text-on-surface truncate">Sharbati Whole Wheat</h4>
+<span class="font-body-sm text-label-caps text-on-surface-variant">Farmer: Gurpreet Singh (Khanna)</span>
+<span class="font-title-md text-body-sm font-bold text-on-surface mt-0.5">₹32/kg × 5 = ₹160</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center bg-surface-container-lowest rounded-lg p-1 font-body-sm font-bold text-on-surface shadow-xs">
+<button class="w-6 h-6 rounded flex items-center justify-center hover:bg-surface-container" type="button">−</button>
+<span class="px-2 text-body-sm">5 kg</span>
+<button class="w-6 h-6 rounded flex items-center justify-center hover:bg-surface-container" type="button">+</button>
+</div>
+<button aria-label="Remove item" class="p-1.5 text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Zero middleman markups applied. 100% bill proceeds dispatched directly to farmers.</span>
+</div>
+</div>
+<!-- Right: Summary Box -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface">Bill Summary</span>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-1">
+<span>Item Subtotal (7 kg Produce)</span>
+<span class="font-semibold text-on-surface">₹208</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">Direct Farmer Delivery <span class="material-symbols-outlined text-[14px]">info</span></span>
+<span class="font-bold text-primary">FREE</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Eco Fresh Packaging</span>
+<span class="font-bold text-primary">FREE</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-title-lg text-title-lg font-bold text-on-surface">
+<span>Total to Pay</span>
+<span class="text-headline-sm font-black text-on-surface">₹208</span>
+</div>
+<p class="font-body-sm text-label-caps text-on-surface-variant mt-1">
+              🚚 Guaranteed delivery tomorrow by 8:00 AM to Rohit (New Delhi 110001)
+            </p>
+</div>
+<div class="pt-space-md">
+<button class="w-full py-3.5 rounded-xl bg-primary-container hover:bg-tertiary-container text-on-primary-container font-title-md font-bold text-body-lg shadow-md transition-all flex items-center justify-center gap-2" type="button">
+              Proceed to Checkout
+              <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: MY RECENT ORDERS & TRACKING -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin-desktop py-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Recent Orders</h2>
+<a class="font-title-md text-body-sm text-primary font-bold hover:underline" data-path="order-history" href="#">
+        All Past Orders (12)
+      </a>
+</div>
+<!-- Order Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-title-md text-title-md font-bold text-on-surface">Order #MX30214</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-caps uppercase font-bold text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Delivered
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Placed Yesterday, 6:40 PM • Delivered Today at 8:15 AM to New Delhi</span>
+<p class="font-body-sm text-body-sm font-medium text-on-surface mt-1">
+            Fresh Pahadi Potatoes (5 kg) + Nashik Red Onions (2 kg) • <span class="font-bold">Total Paid: ₹190</span>
+</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-xs shrink-0">
+<button class="px-space-sm py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-title-md text-body-sm font-semibold transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span> Invoice
+        </button>
+<button class="px-space-sm py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-title-md text-body-sm font-semibold transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">star</span> Rate Produce
+        </button>
+<button class="px-space-sm py-2 rounded-lg bg-primary-container hover:bg-tertiary-container text-on-primary-container font-title-md text-body-sm font-bold transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">repeat</span> Buy Again
+        </button>
+</div>
+</div>
+</section>
+<!-- SECTION 8: WHY BUY ON MANDI-X (Consumer Benefit Strip) -->
+<section class="max-w-[1440px] mx-auto w-full px-margin-mobile lg:px-margin-desktop py-space-xl">
+<div class="bg-surface-container-lowest rounded-2xl p-space-md sm:p-space-lg shadow-sm">
+<div class="text-center max-w-xl mx-auto mb-space-md">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">The MANDI-X Kisan Promise</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">How we cut 4 intermediary levels to deliver fresher food at 25% lower prices</p>
+</div>
+<!-- 5 Clean Trust Badges in a Row -->
+<div class="grid grid-cols-2 md:grid-cols-5 gap-space-sm text-center">
+<div class="flex flex-col items-center p-space-xs">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<h4 class="font-title-md text-body-sm font-bold text-on-surface">Direct From Farmers</h4>
+<p class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">Zero middleman commission</p>
+</div>
+<div class="flex flex-col items-center p-space-xs">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[24px]">energy_savings_leaf</span>
+</div>
+<h4 class="font-title-md text-body-sm font-bold text-on-surface">100% Farm Fresh</h4>
+<p class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">Harvested within 24 hours</p>
+</div>
+<div class="flex flex-col items-center p-space-xs">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[24px]">savings</span>
+</div>
+<h4 class="font-title-md text-body-sm font-bold text-on-surface">Fair Transparent Prices</h4>
+<p class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">Cheaper than supermarkets</p>
+</div>
+<div class="flex flex-col items-center p-space-xs">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[24px]">currency_rupee</span>
+</div>
+<h4 class="font-title-md text-body-sm font-bold text-on-surface">Direct Farmer Payout</h4>
+<p class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">Empowering Kisan families</p>
+</div>
+<div class="flex flex-col items-center p-space-xs col-span-2 md:col-span-1">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[24px]">wb_sunny</span>
+</div>
+<h4 class="font-title-md text-body-sm font-bold text-on-surface">Fast Morning Delivery</h4>
+<p class="font-body-sm text-label-caps text-on-surface-variant mt-0.5">Delivered fresh to doorstep</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 9: FLOATING WHATSAPP AI HELPER PILL -->
+<div class="fixed bottom-24 right-6 z-40 hidden sm:flex flex-col items-end gap-1 pointer-events-auto">
+<div class="bg-surface-container-lowest text-on-surface p-space-sm rounded-2xl shadow-xl flex flex-col gap-1.5 max-w-xs transition-transform hover:scale-102">
+<div class="flex items-center justify-between gap-2 pb-1">
+<span class="font-title-md text-body-sm font-bold flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#25D366] inline-block"></span>
+          💬 WhatsApp Shopping Helper
+        </span>
+<span class="font-label-caps bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded text-[10px]">Instant AI</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm">
+<button class="text-left px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm transition-colors truncate" type="button">
+          👉 "Ask today's tomato rate"
+        </button>
+<button class="text-left px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm transition-colors truncate" type="button">
+          👉 "Track my order #MX30214"
+        </button>
+<button class="text-left px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm transition-colors truncate" type="button">
+          👉 "Find certified organic dal"
+        </button>
+</div>
+</div>
+</div>
+</div></main><aside class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-space-xs"><div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)] flex flex-col gap-space-2xs min-w-[210px]"><div class="flex items-center gap-space-xs font-title-md text-body-sm text-on-surface font-semibold pb-1"><span class="material-symbols-outlined text-primary text-[18px]">smart_toy</span><span>MANDI-X AI Assistant</span></div><div class="flex flex-col gap-1"><button class="text-left text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm px-space-xs py-1 rounded-lg transition-colors flex items-center justify-between" type="button"><span>Ask Product Price</span><span class="material-symbols-outlined text-[14px]">arrow_forward_ios</span></button><button class="text-left text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm px-space-xs py-1 rounded-lg transition-colors flex items-center justify-between" type="button"><span>Check Order Status</span><span class="material-symbols-outlined text-[14px]">arrow_forward_ios</span></button><button class="text-left text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm px-space-xs py-1 rounded-lg transition-colors flex items-center justify-between" type="button"><span>Find Farm Produce</span><span class="material-symbols-outlined text-[14px]">arrow_forward_ios</span></button><button class="text-left text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm px-space-xs py-1 rounded-lg transition-colors flex items-center justify-between" type="button"><span>Direct Support</span><span class="material-symbols-outlined text-[14px]">arrow_forward_ios</span></button></div></div><button aria-label="WhatsApp AI Quick Actions" class="h-14 w-14 rounded-full bg-[#25D366] text-surface-container-lowest flex items-center justify-center shadow-[0_10px_20px_-3px_rgba(37,211,102,0.4)] hover:scale-105 transition-transform" type="button"><span class="material-symbols-outlined text-[30px]">chat</span></button></aside><footer class="w-full bg-surface-container-low py-space-2xl text-on-surface"><div class="max-w-[1440px] mx-auto px-margin-mobile lg:px-margin-desktop flex flex-col gap-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="MANDI-X agritech marketplace modern geometric wordmark logo, sharp typography, minimalist leaf and exchange 'X' motif in neon mint #00F098 and dark slate #0F172A, transparent background, high tech clean vector. Design context: - Primary color: #00f098
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+. The logo should be visually consistent with these brand tokens." class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W-QGQw1jrAzUnULp47xKycaYwI482MY3KQcOJoZhBily5Tj_m-wz4kv5x1vHSEftvxoqLnKr4Mq7zEKAarjVinVuTONWll__ujTYpv8DXCMJ4k18gK34zAFizRjJjBgeMffU2eKGhTUEwKYB5XBcP4eNX2gN3Ko-AQRFyxGz90z-sU7CatuEStH1lcpm9W_IBRU_GUrF6jgfGHfbwFCYh8BOlQzZQzk_juGPxaPUPA-FoMVRNZOpNbvVmT"/><span class="font-label-caps text-label-caps uppercase px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-bold">Consumer</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Bridging regional mandis directly to your doorstep with certified origin traceability, guaranteed farm-gate freshness, and honest commodity pricing.</p></div><div class="flex flex-col gap-space-xs"><span class="font-title-md text-title-md text-on-surface font-bold">Customer Care</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="order-history" href="#">My Orders</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-package" href="#">Track Package</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="customer-help" href="#">Help &amp; FAQ</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="return-policy" href="#">Produce Quality Claims</a></div><div class="flex flex-col gap-space-xs"><span class="font-title-md text-title-md text-on-surface font-bold">Farmer Assurance</span><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[20px]">verified</span><span class="font-body-sm text-body-sm">100% Direct Farm Gate Sourcing</span></div><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span><span class="font-body-sm text-body-sm">Sub-24 Hr Cold Chain Dispatch</span></div><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[20px]">qr_code_2</span><span class="font-body-sm text-body-sm">QR Traceability on All Batches</span></div></div><div class="flex flex-col gap-space-xs"><span class="font-title-md text-title-md text-on-surface font-bold">Secure Payments</span><p class="font-body-sm text-body-sm text-on-surface-variant">Encrypted UPI, Cards, NetBanking &amp; Cash on Delivery supported directly by APMC escrow networks.</p><div class="flex items-center gap-space-xs text-on-surface-variant pt-space-xs"><span class="material-symbols-outlined text-[24px]">lock</span><span class="font-label-caps text-label-caps uppercase text-on-surface font-bold">256-Bit SSL APMC Protocol</span></div></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-md font-body-sm text-body-sm text-on-surface-variant"><p>© 2025 MANDI-X Consumer Marketplace. All rights reserved.</p><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" data-path="mandi-standards" href="#">Grading Standards</a></div></div></div></footer></body></html>

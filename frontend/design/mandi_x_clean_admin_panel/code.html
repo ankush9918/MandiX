@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MANDI-X - Clean Admin Marketplace Control Center</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              mint: '#00F098',
+              green: '#00C97E',
+              mintLight: '#E8FFF6',
+              dark: '#0F172A',
+              bg: '#F7F8FA',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F7F8FA;
+      color: #0F172A;
+      font-family: 'Inter', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex bg-[#F7F8FA] antialiased selection:bg-[#00F098] selection:text-black">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="w-64 bg-white border-r border-slate-200 flex flex-col shrink-0 min-h-screen sticky top-0 h-screen z-30">
+    <!-- Brand Header -->
+    <div class="p-5 border-b border-slate-100 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-[#0F172A] flex items-center justify-center font-black text-[#00F098] text-base tracking-tighter shadow-sm">
+          M<span class="text-white text-xs">X</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-extrabold text-lg tracking-tight text-slate-900">MANDI-X</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#E8FFF6] text-[#00A868] border border-[#00F098]/30">ADMIN</span>
+          </div>
+          <p class="text-[11px] text-slate-400 font-medium">Marketplace Control</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="p-3 flex-1 overflow-y-auto custom-scrollbar space-y-1 text-sm font-medium">
+      <div class="text-[10px] font-bold tracking-wider text-slate-400 px-3 pt-2 pb-1 uppercase">Main Menu</div>
+
+      <!-- Active: Overview -->
+      <a href="#overview" class="flex items-center justify-between px-3 py-2 rounded-lg bg-[#E8FFF6] text-slate-900 font-semibold border border-[#00F098]/40 transition">
+        <div class="flex items-center gap-2.5">
+          <span class="text-base">🏠</span>
+          <span>Overview</span>
+        </div>
+        <span class="w-2 h-2 rounded-full bg-[#00C97E]"></span>
+      </a>
+
+      <!-- Users -->
+      <a href="#users" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <span class="text-base">👥</span>
+        <span>Users</span>
+      </a>
+
+      <!-- Farmers -->
+      <a href="#farmers" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <div class="flex items-center gap-2.5">
+          <span class="text-base">🌾</span>
+          <span>Farmers</span>
+        </div>
+        <span class="text-xs px-1.5 py-0.2 bg-amber-100 text-amber-800 rounded font-semibold">14 New</span>
+      </a>
+
+      <!-- Consumers -->
+      <a href="#users" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <span class="text-base">🛒</span>
+        <span>Consumers</span>
+      </a>
+
+      <!-- Retailers -->
+      <a href="#users" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <span class="text-base">🏪</span>
+        <span>Retailers</span>
+      </a>
+
+      <div class="text-[10px] font-bold tracking-wider text-slate-400 px-3 pt-3 pb-1 uppercase">Operations</div>
+
+      <!-- Products -->
+      <a href="#products" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <div class="flex items-center gap-2.5">
+          <span class="text-base">📦</span>
+          <span>Products</span>
+        </div>
+        <span class="text-xs text-slate-400">184</span>
+      </a>
+
+      <!-- Orders -->
+      <a href="#orders" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <div class="flex items-center gap-2.5">
+          <span class="text-base">🧾</span>
+          <span>Orders</span>
+        </div>
+        <span class="text-xs px-1.5 py-0.5 bg-[#00F098]/20 text-slate-800 font-bold rounded">48 Active</span>
+      </a>
+
+      <!-- Logistics -->
+      <a href="#logistics" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <span class="text-base">🚚</span>
+        <span>Logistics</span>
+      </a>
+
+      <!-- Payments -->
+      <a href="#payments" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <span class="text-base">💳</span>
+        <span>Payments</span>
+      </a>
+
+      <!-- Complaints -->
+      <a href="#complaints" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <div class="flex items-center gap-2.5">
+          <span class="text-base">⚠</span>
+          <span>Complaints</span>
+        </div>
+        <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+      </a>
+
+      <!-- WhatsApp AI -->
+      <a href="#whatsapp" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <div class="flex items-center gap-2.5">
+          <span class="text-base">📱</span>
+          <span>WhatsApp AI</span>
+        </div>
+        <span class="px-1 py-0.2 text-[9px] bg-emerald-100 text-emerald-700 rounded font-bold">ONLINE</span>
+      </a>
+
+      <!-- Settings -->
+      <a href="#settings" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition">
+        <span class="text-base">⚙</span>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <!-- Sidebar Bottom: Admin Profile, System Status, Logout -->
+    <div class="p-3 border-t border-slate-100 space-y-2 text-xs">
+      <div class="flex items-center justify-between px-2 py-1.5 bg-slate-50 rounded-lg border border-slate-200">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#00C97E] animate-pulse"></span>
+          <span class="text-slate-600 font-medium">System Status</span>
+        </div>
+        <span class="text-[11px] font-bold text-[#00A868]">Operational</span>
+      </div>
+
+      <div class="flex items-center justify-between px-2 pt-1">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-full bg-[#0F172A] text-white flex items-center justify-center font-bold text-xs">
+            AD
+          </div>
+          <div>
+            <div class="font-semibold text-slate-800 leading-tight">Ananya Roy</div>
+            <div class="text-[10px] text-slate-400">Super Admin</div>
+          </div>
+        </div>
+        <button title="Logout" class="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT -->
+  <main class="flex-1 flex flex-col min-w-0">
+
+    <!-- TOP HEADER -->
+    <header class="bg-white border-b border-slate-200 px-8 py-3.5 sticky top-0 z-20 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <div>
+          <h1 class="text-lg font-bold text-slate-900 tracking-tight">Admin Panel</h1>
+          <p class="text-xs text-slate-500">MANDI-X Agricultural Operations & Marketplace Control</p>
+        </div>
+      </div>
+
+      <!-- Global Search & Utilities -->
+      <div class="flex items-center gap-3 flex-1 max-w-lg mx-4">
+        <div class="relative w-full">
+          <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          </span>
+          <input type="text" placeholder="Global search: farmers, buyers, order #, crop or ticket..." class="w-full bg-[#F7F8FA] border border-slate-200 text-xs rounded-lg pl-9 pr-3 py-2 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#00F098] focus:border-transparent transition">
+        </div>
+      </div>
+
+      <!-- Right Header Cluster -->
+      <div class="flex items-center gap-3">
+        <!-- Live System Status Badge -->
+        <div class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] text-emerald-800 font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          APMC Gateway Sync 100%
+        </div>
+
+        <!-- Notifications -->
+        <button class="relative p-2 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 transition" title="Notifications">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+          <span class="absolute -top-1 -right-1 w-2 h-2 bg-rose-500 rounded-full"></span>
+        </button>
+
+        <!-- Admin Profile Pill -->
+        <div class="flex items-center gap-2 pl-2 border-l border-slate-200">
+          <div class="w-8 h-8 rounded-full bg-[#0F172A] text-[#00F098] font-bold text-xs flex items-center justify-center">
+            AR
+          </div>
+          <div class="text-left hidden lg:block">
+            <div class="text-xs font-bold text-slate-800">Ananya Roy</div>
+            <div class="text-[10px] text-slate-400">Head of Operations</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <div class="p-8 space-y-8 max-w-7xl">
+
+      <!-- 1. OVERVIEW: 4 CLEAN ACTIONABLE CARDS ONLY -->
+      <section id="overview" class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-base font-bold text-slate-900">Platform Overview</h2>
+            <p class="text-xs text-slate-500">Real-time counts across marketplace users, listings and pending actions</p>
+          </div>
+          <span class="text-xs text-slate-400 bg-white px-2.5 py-1 rounded-md border border-slate-200 font-medium">Last synced: Just now</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Card 1: Total Users -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-slate-300 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Users</span>
+              <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 text-sm">
+                👥
+              </div>
+            </div>
+            <div class="text-2xl font-extrabold text-slate-900 tracking-tight">14,820</div>
+            <div class="mt-2 text-xs text-slate-500 flex items-center gap-1.5">
+              <span class="font-medium text-slate-700">8,420 Farmers</span> • 
+              <span class="font-medium text-slate-700">5,150 Consumers</span> • 
+              <span class="font-medium text-slate-700">1,250 Retailers</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Active Orders -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-slate-300 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Active Orders</span>
+              <div class="w-8 h-8 rounded-lg bg-[#E8FFF6] flex items-center justify-center text-[#00A868] text-sm">
+                🧾
+              </div>
+            </div>
+            <div class="text-2xl font-extrabold text-slate-900 tracking-tight">48 Orders</div>
+            <div class="mt-2 text-xs text-slate-500 flex items-center gap-1.5">
+              <span class="inline-block w-2 h-2 rounded-full bg-[#00C97E]"></span>
+              <span class="font-medium text-slate-700">18 In Transit</span> • 
+              <span class="text-slate-500">30 Pickup Scheduled</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Total Products -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-slate-300 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Products</span>
+              <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-amber-700 text-sm">
+                📦
+              </div>
+            </div>
+            <div class="text-2xl font-extrabold text-slate-900 tracking-tight">184 Lots</div>
+            <div class="mt-2 text-xs text-slate-500 flex items-center gap-1.5">
+              <span class="font-medium text-slate-700">162 Verified Active</span> • 
+              <span class="text-amber-600 font-semibold">22 Pending QA</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Pending Verification -->
+          <div class="bg-white p-5 rounded-xl border border-amber-200 bg-gradient-to-b from-white to-amber-50/30 shadow-sm transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-semibold uppercase tracking-wider text-amber-800">Pending Verification</span>
+              <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-800 text-sm font-bold">
+                ⚠
+              </div>
+            </div>
+            <div class="text-2xl font-extrabold text-amber-900 tracking-tight">14 Requests</div>
+            <div class="mt-2 text-xs text-amber-800 font-medium flex items-center gap-1">
+              <span>9 Farmers (Kisan ID)</span> • 
+              <span>5 Retailers (GSTIN)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. FARMER VERIFICATION & MANAGEMENT (CRITICAL ACTION CENTER) -->
+      <section id="farmers" class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-base font-bold text-slate-900">Farmer Verification & Management</h3>
+              <span class="px-2 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">Action Required</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">Verify Aadhaar land records and APMC producer credentials</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="text" placeholder="Search farmer name or mandi..." class="text-xs px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 focus:outline-none focus:ring-1 focus:ring-[#00F098]">
+            <button class="text-xs font-semibold px-3 py-1.5 bg-[#0F172A] text-white rounded-lg hover:bg-slate-800 transition">
+              Export Farmers CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-700">
+            <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100 uppercase tracking-wider text-[10px]">
+              <tr>
+                <th class="py-3 px-4">Farmer</th>
+                <th class="py-3 px-4">Location / Mandi</th>
+                <th class="py-3 px-4">Listed Products</th>
+                <th class="py-3 px-4">Verification Docs</th>
+                <th class="py-3 px-4">Status</th>
+                <th class="py-3 px-4 text-right">Admin Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <!-- Farmer 1: Pending Verification -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-medium">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-xs">
+                      BM
+                    </div>
+                    <div>
+                      <div class="font-bold text-slate-900">Balwinder Maan</div>
+                      <div class="text-[11px] text-slate-400">+91 98144-88901</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3.5 px-4">
+                  <div class="font-medium text-slate-800">Bhatinda, Punjab</div>
+                  <div class="text-[11px] text-slate-400">APMC Gate #3</div>
+                </td>
+                <td class="py-3.5 px-4 font-medium text-slate-800">
+                  Wheat (HD-2967), Mustard
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center gap-1 text-[11px] text-blue-700 font-medium bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
+                    📄 Aadhaar + 7/12 Jamabandi
+                  </span>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800">
+                    Pending
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-right space-x-1.5">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition">View Docs</button>
+                  <button class="px-2.5 py-1 rounded bg-[#00F098] hover:bg-[#00C97E] text-slate-950 font-bold shadow-xs transition">Verify</button>
+                  <button class="px-2.5 py-1 rounded bg-rose-50 hover:bg-rose-100 text-rose-700 font-semibold transition">Reject</button>
+                </td>
+              </tr>
+
+              <!-- Farmer 2: Verified -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-medium">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">
+                      GS
+                    </div>
+                    <div>
+                      <div class="font-bold text-slate-900 flex items-center gap-1">
+                        Sardar Gurpreet Singh
+                        <svg class="w-3.5 h-3.5 text-emerald-600 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                      </div>
+                      <div class="text-[11px] text-slate-400">+91 94172-33410</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3.5 px-4">
+                  <div class="font-medium text-slate-800">Khanna Mandi, Punjab</div>
+                  <div class="text-[11px] text-slate-400">Hub #AP-44</div>
+                </td>
+                <td class="py-3.5 px-4 font-medium text-slate-800">
+                  Sharbati Wheat, Basmati 1121
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center gap-1 text-[11px] text-emerald-700 font-medium bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+                    ✓ Verified Mandi Pass
+                  </span>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800">
+                    Verified
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-right space-x-1.5">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition">View</button>
+                  <button class="px-2.5 py-1 rounded text-slate-400 hover:text-slate-600 font-medium transition">Edit Details</button>
+                </td>
+              </tr>
+
+              <!-- Farmer 3: Ramesh Patil Verified -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-medium">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">
+                      RP
+                    </div>
+                    <div>
+                      <div class="font-bold text-slate-900 flex items-center gap-1">
+                        Ramesh Patil
+                        <svg class="w-3.5 h-3.5 text-emerald-600 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                      </div>
+                      <div class="text-[11px] text-slate-400">+91 98765-43210</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3.5 px-4">
+                  <div class="font-medium text-slate-800">Lasalgaon, Maharashtra</div>
+                  <div class="text-[11px] text-slate-400">Onion Yard #12</div>
+                </td>
+                <td class="py-3.5 px-4 font-medium text-slate-800">
+                  Nashik Red Onions (Dry)
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center gap-1 text-[11px] text-emerald-700 font-medium bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+                    ✓ Verified Mandi Pass
+                  </span>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800">
+                    Verified
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-right space-x-1.5">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition">View</button>
+                  <button class="px-2.5 py-1 rounded text-slate-400 hover:text-slate-600 font-medium transition">Edit Details</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. USER MANAGEMENT (FARMER, CONSUMER, RETAILER) -->
+      <section id="users" class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h3 class="text-base font-bold text-slate-900">User Management</h3>
+            <p class="text-xs text-slate-500">Directory of verified farmers, retail buyers, and consumers</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <select class="text-xs px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 focus:outline-none">
+              <option>All Roles</option>
+              <option>Farmer</option>
+              <option>Retailer</option>
+              <option>Consumer</option>
+            </select>
+            <select class="text-xs px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 focus:outline-none">
+              <option>All Status</option>
+              <option>Verified</option>
+              <option>Pending</option>
+              <option>Suspended</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-700">
+            <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100 uppercase tracking-wider text-[10px]">
+              <tr>
+                <th class="py-3 px-4">User</th>
+                <th class="py-3 px-4">Role</th>
+                <th class="py-3 px-4">Location</th>
+                <th class="py-3 px-4">Verification</th>
+                <th class="py-3 px-4">Status</th>
+                <th class="py-3 px-4 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <!-- Retailer -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3 px-4">
+                  <div class="font-bold text-slate-900">Vikas Khanna</div>
+                  <div class="text-[11px] text-slate-400">Khanna Agro Superstore</div>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-800">
+                    Retailer
+                  </span>
+                </td>
+                <td class="py-3 px-4">Delhi NCR, Okhla Ph-3</td>
+                <td class="py-3 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    Verified (GST)
+                  </span>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="text-emerald-600 font-semibold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                  </span>
+                </td>
+                <td class="py-3 px-4 text-right space-x-1.5">
+                  <button class="px-2 py-1 bg-slate-100 hover:bg-slate-200 rounded font-medium text-slate-700 transition">View</button>
+                  <button class="px-2 py-1 bg-slate-100 hover:bg-slate-200 rounded font-medium text-slate-700 transition">Edit</button>
+                  <button class="px-2 py-1 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded font-medium transition">Suspend</button>
+                </td>
+              </tr>
+
+              <!-- Consumer -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3 px-4">
+                  <div class="font-bold text-slate-900">Rohit Sharma</div>
+                  <div class="text-[11px] text-slate-400">rohit.s@example.com</div>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">
+                    Consumer
+                  </span>
+                </td>
+                <td class="py-3 px-4">New Delhi, 110001</td>
+                <td class="py-3 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    Verified (Phone)
+                  </span>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="text-emerald-600 font-semibold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                  </span>
+                </td>
+                <td class="py-3 px-4 text-right space-x-1.5">
+                  <button class="px-2 py-1 bg-slate-100 hover:bg-slate-200 rounded font-medium text-slate-700 transition">View</button>
+                  <button class="px-2 py-1 bg-slate-100 hover:bg-slate-200 rounded font-medium text-slate-700 transition">Edit</button>
+                  <button class="px-2 py-1 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded font-medium transition">Suspend</button>
+                </td>
+              </tr>
+
+              <!-- Farmer -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3 px-4">
+                  <div class="font-bold text-slate-900">Kailash Meena</div>
+                  <div class="text-[11px] text-slate-400">Jaipur Agro Cluster</div>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    Farmer
+                  </span>
+                </td>
+                <td class="py-3 px-4">Azadpur / Jaipur, RJ</td>
+                <td class="py-3 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    Verified (Kisan ID)
+                  </span>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="text-emerald-600 font-semibold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                  </span>
+                </td>
+                <td class="py-3 px-4 text-right space-x-1.5">
+                  <button class="px-2 py-1 bg-slate-100 hover:bg-slate-200 rounded font-medium text-slate-700 transition">View</button>
+                  <button class="px-2 py-1 bg-slate-100 hover:bg-slate-200 rounded font-medium text-slate-700 transition">Edit</button>
+                  <button class="px-2 py-1 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded font-medium transition">Suspend</button>
+                </td>
+              </tr>
+
+              <!-- Suspended User Flagged for Quality -->
+              <tr class="hover:bg-slate-50/80 transition bg-rose-50/20">
+                <td class="py-3 px-4">
+                  <div class="font-bold text-slate-900">Apex Agro Traders</div>
+                  <div class="text-[11px] text-slate-400">Trade Lic #882190</div>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-800">
+                    Retailer
+                  </span>
+                </td>
+                <td class="py-3 px-4">Ghaziabad, UP</td>
+                <td class="py-3 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-800">
+                    Flagged Non-Payment
+                  </span>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="text-rose-600 font-semibold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Suspended
+                  </span>
+                </td>
+                <td class="py-3 px-4 text-right space-x-1.5">
+                  <button class="px-2 py-1 bg-slate-100 hover:bg-slate-200 rounded font-medium text-slate-700 transition">View</button>
+                  <button class="px-2 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded font-medium transition">Reinstate</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 4. PRODUCT MANAGEMENT -->
+      <section id="products" class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h3 class="text-base font-bold text-slate-900">Product Management</h3>
+            <p class="text-xs text-slate-500">All harvest lots listed across categories and mandis</p>
+          </div>
+          <!-- Filters -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <select class="text-xs px-2.5 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700">
+              <option>All Categories</option>
+              <option>Grains & Cereals</option>
+              <option>Vegetables</option>
+              <option>Oilseeds</option>
+              <option>Pulses</option>
+            </select>
+            <select class="text-xs px-2.5 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700">
+              <option>All Status</option>
+              <option>Active</option>
+              <option>Sold Out</option>
+              <option>Under Review</option>
+            </select>
+            <select class="text-xs px-2.5 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700">
+              <option>Verification</option>
+              <option>APMC Verified</option>
+              <option>Pending QC</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-700">
+            <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100 uppercase tracking-wider text-[10px]">
+              <tr>
+                <th class="py-3 px-4">Product</th>
+                <th class="py-3 px-4">Farmer</th>
+                <th class="py-3 px-4">Category</th>
+                <th class="py-3 px-4">Quantity</th>
+                <th class="py-3 px-4">Price</th>
+                <th class="py-3 px-4">QC Verification</th>
+                <th class="py-3 px-4">Status</th>
+                <th class="py-3 px-4 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <!-- Item 1 -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3 px-4 font-bold text-slate-900">
+                  🌾 Premium Sharbati Wheat (Grade-A)
+                </td>
+                <td class="py-3 px-4 text-slate-700">Sardar Gurpreet Singh</td>
+                <td class="py-3 px-4">Grains</td>
+                <td class="py-3 px-4 font-semibold text-slate-800">120 QTL</td>
+                <td class="py-3 px-4 font-bold text-slate-900">₹2,600 / QTL</td>
+                <td class="py-3 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    ✓ Moisture &lt; 9.2% Passed
+                  </span>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Active</span>
+                </td>
+                <td class="py-3 px-4 text-right space-x-1">
+                  <button class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">Edit</button>
+                  <button class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">Delist</button>
+                </td>
+              </tr>
+
+              <!-- Item 2 -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3 px-4 font-bold text-slate-900">
+                  🧅 Nashik Red Onions (Export Grade)
+                </td>
+                <td class="py-3 px-4 text-slate-700">Ramesh Patil</td>
+                <td class="py-3 px-4">Vegetables</td>
+                <td class="py-3 px-4 font-semibold text-slate-800">60 QTL</td>
+                <td class="py-3 px-4 font-bold text-slate-900">₹2,250 / QTL</td>
+                <td class="py-3 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    ✓ 50mm+ Size Sorted
+                  </span>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">Low Stock</span>
+                </td>
+                <td class="py-3 px-4 text-right space-x-1">
+                  <button class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">Edit</button>
+                  <button class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">Delist</button>
+                </td>
+              </tr>
+
+              <!-- Item 3: Under QC -->
+              <tr class="hover:bg-slate-50/80 transition bg-amber-50/20">
+                <td class="py-3 px-4 font-bold text-slate-900">
+                  🍅 Fresh Hybrid Tomatoes (Grade-B)
+                </td>
+                <td class="py-3 px-4 text-slate-700">Kailash Meena</td>
+                <td class="py-3 px-4">Vegetables</td>
+                <td class="py-3 px-4 font-semibold text-slate-800">35 QTL</td>
+                <td class="py-3 px-4 font-bold text-slate-900">₹1,700 / QTL</td>
+                <td class="py-3 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">
+                    Pending QC Gate Test
+                  </span>
+                </td>
+                <td class="py-3 px-4">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">Under Review</span>
+                </td>
+                <td class="py-3 px-4 text-right space-x-1">
+                  <button class="px-2 py-1 rounded bg-[#00F098] hover:bg-[#00C97E] text-slate-950 font-bold">Approve QC</button>
+                  <button class="px-2 py-1 rounded bg-rose-50 text-rose-700 hover:bg-rose-100 font-medium">Reject</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 5. ORDER MANAGEMENT -->
+      <section id="orders" class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h3 class="text-base font-bold text-slate-900">Order Management</h3>
+            <p class="text-xs text-slate-500">End-to-end status of spot purchases, escrow holds and delivery dispatches</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-slate-500">Filter Status:</span>
+            <div class="flex items-center gap-1">
+              <button class="px-2.5 py-1 text-xs rounded bg-slate-900 text-white font-semibold">All</button>
+              <button class="px-2.5 py-1 text-xs rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">Processing</button>
+              <button class="px-2.5 py-1 text-xs rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">Shipped</button>
+              <button class="px-2.5 py-1 text-xs rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">Delivered</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-700">
+            <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100 uppercase tracking-wider text-[10px]">
+              <tr>
+                <th class="py-3 px-4">Order ID</th>
+                <th class="py-3 px-4">Buyer</th>
+                <th class="py-3 px-4">Farmer</th>
+                <th class="py-3 px-4">Product / Qty</th>
+                <th class="py-3 px-4">Amount</th>
+                <th class="py-3 px-4">Delivery Transporter</th>
+                <th class="py-3 px-4">Status</th>
+                <th class="py-3 px-4 text-right">Details</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <!-- Order 1 -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-mono font-bold text-slate-900">#ORD-9021</td>
+                <td class="py-3.5 px-4 font-semibold text-slate-800">BigBasket Agro B2B</td>
+                <td class="py-3.5 px-4 text-slate-700">Sardar Gurpreet Singh</td>
+                <td class="py-3.5 px-4">Sharbati Wheat (80 QTL)</td>
+                <td class="py-3.5 px-4 font-bold text-slate-900">₹2,08,000</td>
+                <td class="py-3.5 px-4 text-slate-600">Kissan Express #DL-01-A</td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800">
+                    Shipped
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-right">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">View Order</button>
+                </td>
+              </tr>
+
+              <!-- Order 2 -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-mono font-bold text-slate-900">#ORD-9018</td>
+                <td class="py-3.5 px-4 font-semibold text-slate-800">Khanna Agro Superstore</td>
+                <td class="py-3.5 px-4 text-slate-700">Ramesh Patil</td>
+                <td class="py-3.5 px-4">Nashik Red Onions (50 QTL)</td>
+                <td class="py-3.5 px-4 font-bold text-slate-900">₹1,12,500</td>
+                <td class="py-3.5 px-4 text-slate-600">Mandi Reefer #MH-15</td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">
+                    Processing
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-right">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">View Order</button>
+                </td>
+              </tr>
+
+              <!-- Order 3 -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-mono font-bold text-slate-900">#ORD-8992</td>
+                <td class="py-3.5 px-4 font-semibold text-slate-800">Delhi Grain Wholesalers</td>
+                <td class="py-3.5 px-4 text-slate-700">Baldev Singh</td>
+                <td class="py-3.5 px-4">Basmati 1121 Paddy (40 QTL)</td>
+                <td class="py-3.5 px-4 font-bold text-slate-900">₹1,64,000</td>
+                <td class="py-3.5 px-4 text-slate-600">Okhla Depot Gate #3</td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    Delivered
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-right">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">View Order</button>
+                </td>
+              </tr>
+
+              <!-- Order 4 -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-mono font-bold text-slate-900">#MX30214</td>
+                <td class="py-3.5 px-4 font-semibold text-slate-800">Rohit Sharma (Consumer)</td>
+                <td class="py-3.5 px-4 text-slate-700">Vikram Rana</td>
+                <td class="py-3.5 px-4">Pahadi Potatoes (5 kg)</td>
+                <td class="py-3.5 px-4 font-bold text-slate-900">₹190</td>
+                <td class="py-3.5 px-4 text-slate-600">Local Last-Mile Hub #8</td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    Delivered
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-right">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">View Order</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. LOGISTICS & OPERATIONS -->
+      <section id="logistics" class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+          <div>
+            <h3 class="text-base font-bold text-slate-900">Logistics Operations</h3>
+            <p class="text-xs text-slate-500">Live farm-gate vehicle dispatch and APMC consolidation depots</p>
+          </div>
+          <!-- 4 Operation Summary Cards -->
+          <div class="flex items-center gap-3">
+            <div class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400">Active Pickups</div>
+              <div class="text-sm font-black text-slate-900">12</div>
+            </div>
+            <div class="px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-lg text-center">
+              <div class="text-[10px] uppercase font-bold text-blue-600">In Transit</div>
+              <div class="text-sm font-black text-blue-900">18</div>
+            </div>
+            <div class="px-3 py-1.5 bg-emerald-50 border border-emerald-100 rounded-lg text-center">
+              <div class="text-[10px] uppercase font-bold text-emerald-600">Delivered Today</div>
+              <div class="text-sm font-black text-emerald-900">34</div>
+            </div>
+            <div class="px-3 py-1.5 bg-rose-50 border border-rose-100 rounded-lg text-center">
+              <div class="text-[10px] uppercase font-bold text-rose-600">Delayed</div>
+              <div class="text-sm font-black text-rose-900">01</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logistics Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-700">
+            <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100 uppercase tracking-wider text-[10px]">
+              <tr>
+                <th class="py-2.5 px-3">Order</th>
+                <th class="py-2.5 px-3">Farmer</th>
+                <th class="py-2.5 px-3">Pickup Location</th>
+                <th class="py-2.5 px-3">Dispatch Date</th>
+                <th class="py-2.5 px-3">Status</th>
+                <th class="py-2.5 px-3 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-3 px-3 font-mono font-bold text-slate-900">#ORD-9021</td>
+                <td class="py-3 px-3">Sardar Gurpreet Singh</td>
+                <td class="py-3 px-3">Khanna Mandi Gate #2, Punjab</td>
+                <td class="py-3 px-3 font-medium">18 Sept 2026, 09:30 AM</td>
+                <td class="py-3 px-3">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800">
+                    In Transit
+                  </span>
+                </td>
+                <td class="py-3 px-3 text-right">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">Track Fleet</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-mono font-bold text-slate-900">#ORD-9018</td>
+                <td class="py-3 px-3">Ramesh Patil</td>
+                <td class="py-3 px-3">Village Collection Point, Lasalgaon</td>
+                <td class="py-3 px-3 font-medium">19 Sept 2026, 07:00 AM</td>
+                <td class="py-3 px-3">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">
+                    Pickup Scheduled
+                  </span>
+                </td>
+                <td class="py-3 px-3 text-right">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">Assign Driver</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-mono font-bold text-slate-900">#ORD-8941</td>
+                <td class="py-3 px-3">Kailash Meena</td>
+                <td class="py-3 px-3">Jaipur Highway Hub</td>
+                <td class="py-3 px-3 font-medium">17 Sept 2026 (Delayed 2 hrs)</td>
+                <td class="py-3 px-3">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-800">
+                    Delayed (Tyre Puncture)
+                  </span>
+                </td>
+                <td class="py-3 px-3 text-right">
+                  <button class="px-2.5 py-1 rounded bg-rose-50 text-rose-700 font-bold hover:bg-rose-100">Re-route</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 7. PAYMENTS & ESCROW LEDGER -->
+      <section id="payments" class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+          <div>
+            <h3 class="text-base font-bold text-slate-900">Payments & Escrow Settlements</h3>
+            <p class="text-xs text-slate-500">Direct APMC escrow fund tracking and RTGS farmer disbursements</p>
+          </div>
+          <!-- 4 Payment Stat Blocks -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg">
+              <div class="text-[10px] uppercase font-bold text-slate-400">Total Transactions</div>
+              <div class="text-sm font-black text-slate-900">₹48,92,400</div>
+            </div>
+            <div class="px-3 py-1.5 bg-emerald-50 border border-emerald-100 rounded-lg">
+              <div class="text-[10px] uppercase font-bold text-emerald-600">Successful</div>
+              <div class="text-sm font-black text-emerald-900">₹44,20,000</div>
+            </div>
+            <div class="px-3 py-1.5 bg-amber-50 border border-amber-100 rounded-lg">
+              <div class="text-[10px] uppercase font-bold text-amber-600">Pending Escrow</div>
+              <div class="text-sm font-black text-amber-900">₹4,12,900</div>
+            </div>
+            <div class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg">
+              <div class="text-[10px] uppercase font-bold text-slate-500">Refunds</div>
+              <div class="text-sm font-black text-slate-700">₹59,500</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction List -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-700">
+            <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100 uppercase tracking-wider text-[10px]">
+              <tr>
+                <th class="py-2.5 px-3">Txn ID</th>
+                <th class="py-2.5 px-3">Payee / Beneficiary</th>
+                <th class="py-2.5 px-3">Channel</th>
+                <th class="py-2.5 px-3">Amount</th>
+                <th class="py-2.5 px-3">Date</th>
+                <th class="py-2.5 px-3">Status</th>
+                <th class="py-2.5 px-3 text-right">Audit</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-3 px-3 font-mono font-bold text-slate-900">TXN-882910</td>
+                <td class="py-3 px-3">Sardar Gurpreet Singh (Farmer)</td>
+                <td class="py-3 px-3">RTGS Escrow Direct</td>
+                <td class="py-3 px-3 font-bold text-slate-900">₹2,08,000</td>
+                <td class="py-3 px-3 text-slate-500">18 Sept 2026</td>
+                <td class="py-3 px-3">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    Completed
+                  </span>
+                </td>
+                <td class="py-3 px-3 text-right">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">View UTR</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-mono font-bold text-slate-900">TXN-882740</td>
+                <td class="py-3 px-3">Baldev Singh (Farmer)</td>
+                <td class="py-3 px-3">HDFC Mandi Clearing</td>
+                <td class="py-3 px-3 font-bold text-slate-900">₹1,64,000</td>
+                <td class="py-3 px-3 text-slate-500">14 Sept 2026</td>
+                <td class="py-3 px-3">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    Completed
+                  </span>
+                </td>
+                <td class="py-3 px-3 text-right">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">View UTR</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-mono font-bold text-slate-900">TXN-882410</td>
+                <td class="py-3 px-3">Ramesh Patil (Farmer)</td>
+                <td class="py-3 px-3">UPI Mandate / Escrow</td>
+                <td class="py-3 px-3 font-bold text-slate-900">₹1,12,500</td>
+                <td class="py-3 px-3 text-slate-500">17 Sept 2026</td>
+                <td class="py-3 px-3">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">
+                    Pending In Escrow
+                  </span>
+                </td>
+                <td class="py-3 px-3 text-right">
+                  <button class="px-2.5 py-1 rounded bg-[#00F098] hover:bg-[#00C97E] text-slate-950 font-bold">Release Escrow</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 8. COMPLAINTS & DISPUTE TICKETS -->
+      <section id="complaints" class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-base font-bold text-slate-900">Complaints & Quality Disputes</h3>
+              <span class="px-2 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800">3 Open</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">Produce quality checks, transit damage, and delivery discrepancy resolution</p>
+          </div>
+          <button class="text-xs font-semibold px-3 py-1.5 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition">
+            Filter by Priority
+          </button>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-700">
+            <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100 uppercase tracking-wider text-[10px]">
+              <tr>
+                <th class="py-3 px-4">Ticket ID</th>
+                <th class="py-3 px-4">User</th>
+                <th class="py-3 px-4">Issue Description</th>
+                <th class="py-3 px-4">Priority</th>
+                <th class="py-3 px-4">Status</th>
+                <th class="py-3 px-4">Assigned To</th>
+                <th class="py-3 px-4 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <!-- Ticket 1: Critical -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-mono font-bold text-slate-900">#TK-1082</td>
+                <td class="py-3.5 px-4">
+                  <div class="font-bold text-slate-900">Khanna Agro</div>
+                  <div class="text-[11px] text-slate-400">Retailer</div>
+                </td>
+                <td class="py-3.5 px-4 font-medium text-slate-800">
+                  Moisture level higher than 12% in Lot #9014 (QC sample rejected)
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-800">
+                    Critical
+                  </span>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">
+                    In Review
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 font-medium text-slate-600">Pooja S. (QC Lead)</td>
+                <td class="py-3.5 px-4 text-right">
+                  <button class="px-2.5 py-1 rounded bg-[#00F098] hover:bg-[#00C97E] text-slate-950 font-bold">Review Claim</button>
+                </td>
+              </tr>
+
+              <!-- Ticket 2: High -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-mono font-bold text-slate-900">#TK-1079</td>
+                <td class="py-3.5 px-4">
+                  <div class="font-bold text-slate-900">Sardar Gurpreet Singh</div>
+                  <div class="text-[11px] text-slate-400">Farmer</div>
+                </td>
+                <td class="py-3.5 px-4 font-medium text-slate-800">
+                  Transporter arrived 2.5 hours late for scheduled morning loading
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">
+                    High
+                  </span>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">
+                    Open
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 font-medium text-slate-600">Naveen K. (Fleet)</td>
+                <td class="py-3.5 px-4 text-right">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">Assign</button>
+                </td>
+              </tr>
+
+              <!-- Ticket 3: Medium -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="py-3.5 px-4 font-mono font-bold text-slate-900">#TK-1065</td>
+                <td class="py-3.5 px-4">
+                  <div class="font-bold text-slate-900">Rohit Sharma</div>
+                  <div class="text-[11px] text-slate-400">Consumer</div>
+                </td>
+                <td class="py-3.5 px-4 font-medium text-slate-800">
+                  Requesting tax invoice copy for Order #MX30214
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 text-slate-700">
+                    Low
+                  </span>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    Resolved
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 font-medium text-slate-600">Auto-System</td>
+                <td class="py-3.5 px-4 text-right">
+                  <button class="px-2.5 py-1 rounded bg-slate-100 text-slate-400 font-medium">Closed</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 9. WHATSAPP AI MANAGEMENT (CLEAN OPERATIONAL SECTION - NO AI DASHBOARDS) -->
+      <section id="whatsapp" class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-base font-bold text-slate-900">WhatsApp Assistant Operations</h3>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Live Gateway</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">Manage farmer voice queries, price checks, and automated WhatsApp order tickets</p>
+          </div>
+          <!-- 3 Operational Metrics -->
+          <div class="flex items-center gap-3">
+            <div class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400">Messages Today</div>
+              <div class="text-sm font-black text-slate-900">1,420</div>
+            </div>
+            <div class="px-3 py-1.5 bg-emerald-50 border border-emerald-100 rounded-lg text-center">
+              <div class="text-[10px] uppercase font-bold text-emerald-600">Active Chats</div>
+              <div class="text-sm font-black text-emerald-900">84</div>
+            </div>
+            <div class="px-3 py-1.5 bg-amber-50 border border-amber-100 rounded-lg text-center">
+              <div class="text-[10px] uppercase font-bold text-amber-600">Unresolved Queries</div>
+              <div class="text-sm font-black text-amber-900">06</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent WhatsApp Queries -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-700">
+            <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100 uppercase tracking-wider text-[10px]">
+              <tr>
+                <th class="py-2 px-3">Phone / User</th>
+                <th class="py-2 px-3">User Role</th>
+                <th class="py-2 px-3">Last Query</th>
+                <th class="py-2 px-3">AI Response Summary</th>
+                <th class="py-2 px-3">Status</th>
+                <th class="py-2 px-3 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-2.5 px-3 font-medium text-slate-900">+91 94172-XXXXX (Gurpreet)</td>
+                <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 bg-emerald-100 text-emerald-800 rounded text-[10px] font-bold">Farmer</span></td>
+                <td class="py-2.5 px-3 text-slate-700">"Aaj Khanna Mandi me wheat ka rate kya hai?"</td>
+                <td class="py-2.5 px-3 text-slate-500">Shared ₹2,600/QTL rate and active buyer quotes</td>
+                <td class="py-2.5 px-3"><span class="text-emerald-700 font-semibold">Resolved</span></td>
+                <td class="py-2.5 px-3 text-right"><button class="text-blue-600 hover:underline">View Chat</button></td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-medium text-slate-900">+91 98112-XXXXX (Khanna Agro)</td>
+                <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 bg-purple-100 text-purple-800 rounded text-[10px] font-bold">Retailer</span></td>
+                <td class="py-2.5 px-3 text-slate-700">"Where is the driver for Order #ORD-9021?"</td>
+                <td class="py-2.5 px-3 text-slate-500">Provided live GPS dispatch tracking link</td>
+                <td class="py-2.5 px-3"><span class="text-emerald-700 font-semibold">Resolved</span></td>
+                <td class="py-2.5 px-3 text-right"><button class="text-blue-600 hover:underline">View Chat</button></td>
+              </tr>
+              <tr class="bg-amber-50/20">
+                <td class="py-2.5 px-3 font-medium text-slate-900">+91 99120-XXXXX (New Kisan)</td>
+                <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 bg-amber-100 text-amber-800 rounded text-[10px] font-bold">Unregistered</span></td>
+                <td class="py-2.5 px-3 text-slate-700">"Mujhe 40 bag soybean bechna hai, register kaise karein?"</td>
+                <td class="py-2.5 px-3 text-amber-800 font-medium">Escalated: Hindi onboarding assistance requested</td>
+                <td class="py-2.5 px-3"><span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded font-bold text-[10px]">Requires Agent</span></td>
+                <td class="py-2.5 px-3 text-right"><button class="px-2 py-0.5 rounded bg-[#00F098] hover:bg-[#00C97E] text-slate-950 font-bold">Call Kisan</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 10. SYSTEM SETTINGS & CONFIGURATION -->
+      <section id="settings" class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 space-y-4">
+        <div class="pb-3 border-b border-slate-100">
+          <h3 class="text-base font-bold text-slate-900">Settings & Marketplace Governance</h3>
+          <p class="text-xs text-slate-500">Global configurations for APMC fee waiver, payment gateways and automated alerts</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <!-- Account & Roles -->
+          <div class="p-4 rounded-lg border border-slate-200 hover:border-slate-300 transition space-y-2">
+            <div class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <span>👤</span> Account Settings
+            </div>
+            <p class="text-slate-500 text-[11px]">Admin team roles, 2-factor authorization, and access audit logs</p>
+            <button class="text-xs font-semibold text-slate-800 hover:text-black pt-1 block">Manage Roles →</button>
+          </div>
+
+          <!-- Marketplace Settings -->
+          <div class="p-4 rounded-lg border border-slate-200 hover:border-slate-300 transition space-y-2">
+            <div class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <span>🏪</span> Marketplace Settings
+            </div>
+            <p class="text-slate-500 text-[11px]">APMC gateway commission waiver (0%), spot price refresh frequency (15m)</p>
+            <button class="text-xs font-semibold text-slate-800 hover:text-black pt-1 block">Configure Fees →</button>
+          </div>
+
+          <!-- Notification & Security -->
+          <div class="p-4 rounded-lg border border-slate-200 hover:border-slate-300 transition space-y-2">
+            <div class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <span>🔒</span> Security & System
+            </div>
+            <p class="text-slate-500 text-[11px]">256-bit SSL APMC protocol status, automated escrow backup, daily DB audit</p>
+            <button class="text-xs font-semibold text-slate-800 hover:text-black pt-1 block">Security Logs →</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>
