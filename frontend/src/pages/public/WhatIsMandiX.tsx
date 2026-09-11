@@ -145,7 +145,7 @@ export const WhatIsMandiX: React.FC = () => {
             </Link>
             <Link
               to="/market-prices"
-              className="h-11 px-8 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-bold transition-all"
+              className="h-11 px-8 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-bold transition-all inline-flex items-center justify-center"
             >
               Check Live Rates
             </Link>

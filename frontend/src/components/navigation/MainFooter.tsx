@@ -8,8 +8,15 @@ export const MainFooter: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           {/* Col 1: Branding */}
           <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-2">
-              <span className="font-black text-2xl text-white tracking-tight">
+            <div className="flex items-center gap-2.5">
+              <div className="w-10 h-10 rounded-xl overflow-hidden bg-[#0A1120] border border-[#00F098]/40 flex items-center justify-center shrink-0 shadow-sm">
+                <img
+                  src="/assets/logo.png"
+                  alt="MANDI-X Logo"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <span className="font-black text-2xl text-white tracking-tight flex items-center">
                 MANDI<span className="text-[#00F098]">-X</span>
               </span>
               <span className="px-2 py-0.5 rounded-full bg-[#00F098]/20 text-[#00F098] text-[10px] font-bold border border-[#00F098]/30">

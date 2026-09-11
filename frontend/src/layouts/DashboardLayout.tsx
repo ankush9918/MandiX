@@ -4,7 +4,6 @@ import { useAuth } from '../context/AuthContext';
 import { useNotifications } from '../context/NotificationContext';
 import { useMarket } from '../context/MarketContext';
 import { FloatingWhatsAppAI } from '../components/ai/FloatingWhatsAppAI';
-import { DemoToolbar } from '../components/common/DemoToolbar';
 import { ToastContainer } from '../components/common/ToastContainer';
 import { Drawer } from '../components/common/Drawer';
 import {
@@ -146,9 +145,16 @@ export const DashboardLayout: React.FC = () => {
       <aside className="hidden lg:flex w-64 bg-white border-r border-[#E2E8F0] flex-col shrink-0 sticky top-0 h-screen z-30 justify-between select-none">
         <div className="flex flex-col flex-1 overflow-y-auto">
           {/* Brand Header */}
-          <div className="p-5 border-b border-[#E2E8F0] flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2">
-              <span className="font-black text-xl tracking-tight text-[#0F172A]">
+          <div className="p-4 border-b border-[#E2E8F0] flex items-center justify-between">
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <div className="w-9 h-9 rounded-xl overflow-hidden bg-[#0F172A] border border-[#00C97E]/30 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                <img
+                  src="/assets/logo.png"
+                  alt="MANDI-X Logo"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <span className="font-black text-xl tracking-tight text-[#0F172A] flex items-center">
                 MANDI<span className="text-[#00C97E]">-X</span>
               </span>
             </Link>
@@ -215,14 +221,21 @@ export const DashboardLayout: React.FC = () => {
           <div className="relative w-72 bg-white h-full flex flex-col justify-between z-10 shadow-2xl animate-in slide-in-from-left duration-200">
             <div className="flex-1 overflow-y-auto">
               <div className="p-4 border-b border-[#E2E8F0] flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="font-black text-lg text-[#0F172A]">
+                <Link to="/" className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg overflow-hidden bg-[#0F172A] border border-[#00C97E]/30 flex items-center justify-center shrink-0">
+                    <img
+                      src="/assets/logo.png"
+                      alt="MANDI-X Logo"
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                  <span className="font-black text-lg text-[#0F172A] flex items-center">
                     MANDI<span className="text-[#00C97E]">-X</span>
                   </span>
                   <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#E8FFF6] text-[#006D42]">
                     {currentDisplayRole}
                   </span>
-                </div>
+                </Link>
                 <button
                   onClick={() => setMobileSidebarOpen(false)}
                   className="p-1 rounded-lg hover:bg-slate-100 text-slate-500"
@@ -355,7 +368,7 @@ export const DashboardLayout: React.FC = () => {
         </header>
 
         {/* BODY CONTENT */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6">
+        <main className="flex-1 p-3.5 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6 min-w-0 overflow-x-hidden">
           <Outlet />
         </main>
       </div>
@@ -402,7 +415,6 @@ export const DashboardLayout: React.FC = () => {
       </Drawer>
 
       <FloatingWhatsAppAI />
-      <DemoToolbar />
       <ToastContainer />
     </div>
   );

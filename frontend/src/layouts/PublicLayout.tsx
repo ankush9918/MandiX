@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import { MainNavbar } from '../components/navigation/MainNavbar';
 import { MainFooter } from '../components/navigation/MainFooter';
 import { FloatingWhatsAppAI } from '../components/ai/FloatingWhatsAppAI';
-import { DemoToolbar } from '../components/common/DemoToolbar';
 import { ToastContainer } from '../components/common/ToastContainer';
 
 export const PublicLayout: React.FC = () => {
@@ -15,7 +14,6 @@ export const PublicLayout: React.FC = () => {
       </main>
       <MainFooter />
       <FloatingWhatsAppAI />
-      <DemoToolbar />
       <ToastContainer />
     </div>
   );

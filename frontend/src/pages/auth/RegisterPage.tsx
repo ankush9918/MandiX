@@ -66,11 +66,20 @@ export const RegisterPage: React.FC = () => {
     <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-4 sm:p-6 lg:p-8 font-sans">
       <div className="w-full max-w-2xl bg-white border border-[#E2E8F0] shadow-xl rounded-3xl p-6 sm:p-10 space-y-8">
         {/* Header */}
-        <div className="text-center space-y-1">
+        <div className="text-center space-y-2 flex flex-col items-center">
+          <Link to="/" className="inline-block hover:scale-105 transition-transform">
+            <div className="w-16 h-16 rounded-2xl overflow-hidden bg-[#0F172A] border-2 border-[#00C97E]/35 shadow-md flex items-center justify-center mx-auto">
+              <img
+                src="/assets/logo.png"
+                alt="MANDI-X Logo"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </Link>
           <span className="text-[11px] font-bold uppercase tracking-widest text-[#006D42] bg-[#E8FFF6] px-3 py-1 rounded-full border border-[#00F098]/30">
             JOIN MANDI-X
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight mt-2">
+          <h1 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight mt-1">
             Create Your Account
           </h1>
           <p className="text-xs sm:text-sm text-[#64748B]">

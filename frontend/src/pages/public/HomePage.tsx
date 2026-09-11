@@ -77,33 +77,33 @@ export const HomePage: React.FC = () => {
                 </span>
               </div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight sm:leading-none mb-5">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tight text-white leading-tight sm:leading-none mb-5">
                 smart farm <br />
                 <span className="text-white">trading platform</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-white/80 max-w-xl mb-8 leading-relaxed font-medium">
+              <p className="text-sm sm:text-base lg:text-lg text-white/80 max-w-xl mb-8 leading-relaxed font-medium">
                 Empowering farmers, bulk retailers, and everyday consumers with direct trade, AI demand forecasting, and integrated logistics.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 w-full sm:w-auto">
                 <Link
                   to="/register"
-                  className="h-12 px-7 rounded-full bg-[#00F098] text-[#0F172A] text-base font-extrabold hover:bg-[#00C97E] hover:text-white transition-all shadow-[0_4px_16px_rgba(0,240,152,0.4)] flex items-center justify-center gap-2 active:scale-95"
+                  className="h-12 px-7 rounded-full bg-[#00F098] text-[#0F172A] text-sm sm:text-base font-extrabold hover:bg-[#00C97E] hover:text-white transition-all shadow-[0_4px_16px_rgba(0,240,152,0.4)] inline-flex items-center justify-center gap-2 active:scale-95"
                 >
                   <span>Get Started</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href="#live-rates"
-                  className="h-12 px-7 rounded-full bg-slate-800/90 hover:bg-slate-700 text-white text-base font-bold border border-white/20 transition-all flex items-center justify-center shadow-md"
+                  className="h-12 px-7 rounded-full bg-slate-800/90 hover:bg-slate-700 text-white text-sm sm:text-base font-bold border border-white/20 transition-all inline-flex items-center justify-center shadow-md"
                 >
                   Explore Market
                 </a>
               </div>
 
               {/* Verified Trust Strip */}
-              <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-sm text-white/90 pt-4 border-t border-white/15">
+              <div className="flex flex-wrap items-center gap-y-2.5 gap-x-5 text-xs sm:text-sm text-white/90 pt-4 border-t border-white/15 w-full">
                 <span className="inline-flex items-center gap-1.5 font-medium">
                   <span className="text-[#00F098] font-black">✓</span> Verified Farmers
                 </span>
@@ -795,13 +795,13 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               to="/register"
-              className="h-12 px-8 rounded-full bg-[#00F098] text-[#0F172A] text-sm font-extrabold hover:bg-[#00C97E] hover:text-white transition-all shadow-[0_4px_16px_rgba(0,240,152,0.4)] active:scale-95"
+              className="h-12 px-8 rounded-full bg-[#00F098] text-[#0F172A] text-sm font-extrabold hover:bg-[#00C97E] hover:text-white transition-all shadow-[0_4px_16px_rgba(0,240,152,0.4)] active:scale-95 inline-flex items-center justify-center"
             >
               Get Started Free
             </Link>
             <a
               href="#live-rates"
-              className="h-12 px-8 rounded-full bg-slate-800 text-white border border-white/20 hover:bg-slate-700 text-sm font-bold transition-all flex items-center justify-center"
+              className="h-12 px-8 rounded-full bg-slate-800 text-white border border-white/20 hover:bg-slate-700 text-sm font-bold transition-all inline-flex items-center justify-center shadow-md"
             >
               Explore Market
             </a>
